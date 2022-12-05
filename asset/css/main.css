@@ -1,0 +1,177 @@
+.sc-intro{
+    background: #999D9E;
+
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.sc-intro .bookmark{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    z-index: 99;
+}
+.sc-intro .bookmark .bookmark-txt{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding-right: 5em;
+    padding-left: clamp(1.5em, 4vw, 2.5em);
+    line-height: 1.2;
+    color: #fff;
+}
+.sc-intro .bookmark .bookmark-txt span{display: block;}
+.sc-intro .bookmark svg{
+    width: auto;
+    height: 6em;
+}
+
+.sc-intro .globe-area{
+    z-index: 500;
+    position: absolute;
+    right: 0.9em;
+    left: auto;
+    top: 0.9em;
+    width: 4.2em;
+    height: 4.2em;
+    transform: translate(0%, 0%);
+    background: transparent;
+}
+.sc-intro .globe-area .globe-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* width: 3em;
+    height: 3em; */
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    will-change: transform;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: .8em;
+
+    animation: globe 5.4s cubic-bezier(0.35, 0, 0.65, 1) infinite;
+    box-shadow: inset 0px 0px 0px 0.125em #fff;
+}
+.sc-intro .globe-area .circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: inset 0.1em 0px 0px 0.08em #fff;
+    animation: circle 2.7s linear infinite;
+    font-size: .75em;
+}
+.sc-intro .globe-area .circle:nth-child(1){    animation-delay: -1.8s;}
+.sc-intro .globe-area .circle:nth-child(2){    animation-delay: -.9s;}
+.sc-intro .globe-area .circle-hor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 55%;
+    box-shadow: inset 0px 0px 0px 0.15em #fff;
+    font-size: .75em;
+}
+.sc-intro .globe-area .circle-hor-middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    transform: translate(-50%, -50%);
+    border-radius: 0%;
+    height: 0.15em;
+    background: #fff;
+    font-size: .75em;
+}
+
+@keyframes globe {
+    0% {
+        transform: translate(-50%, -50%) rotate(15deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-15deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(15deg);
+    }
+}
+
+@keyframes circle {
+    0% {
+        border-radius: 50%;
+        box-shadow: inset 0.1em 0px 0px 0.08em #fff;
+        width: 100%;
+    }
+    49% {
+        border-radius: 50%;
+        box-shadow: inset 0.1em 0px 0px 0.08em #fff;
+        background: transparent;
+    }
+    50% {
+        border-radius: 0%;
+        width: 0.175em;
+        background: #fff;
+    }
+    51% {
+        border-radius: 50%;
+        box-shadow: inset -0.1em 0px 0px 0.08em #fff;
+        background: transparent;
+    }
+    100% {
+        border-radius: 50%;
+        box-shadow: inset -0.1em 0px 0px 0.08em #fff;
+        width: 100%;
+    }
+}
+
+
+
+.sc-intro .intro-img{
+    top: -10%;
+    width: 100%;
+    height: 110%;
+    box-sizing: border-box;
+    position: absolute;
+    min-height: 115vh;
+}
+.sc-intro .intro-img img{
+    width: auto;
+    /* width: 100%; */
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 사진 */
+.sc-intro .info-area{
+    position: absolute;
+    font-size: 31.4px;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    line-height: 1.4;
+}
+.sc-intro .info-area .arrow-box{
+    width: clamp(1.1em, 1.3vw, 1.25em);
+    display: inline-block;
+    top: -12.5vh;
+    position: absolute;
+}
+.sc-intro .info-area .arrow-box svg{}
+.sc-intro .info-area .arrow-txt{}
+.sc-intro .info-area span{display: block;}
+
+.sc-intro .animate-name{}

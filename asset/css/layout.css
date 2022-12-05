@@ -12,8 +12,11 @@
     left: 0;
     right: 0;
     z-index: 99;
+
+    display: none;
+    /* top으로 -100% 제이쿼리 */
 }
-.txt-load{
+.loading-wrap .txt-load{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,4 +26,160 @@
     padding-left: 0.6em;
     padding-right: 0.4em;
     font-size: calc(clamp(3.25em, 5vw, 4.5em) * .75);
+
+    opacity: 0;
 }
+.loading-wrap .txt-load::before{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    left: 0;
+    top: 47%;
+    bottom: auto;
+    width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+    height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+    transform: translate(0, 0) scale(1);
+}
+.loading-wrap .txt-load:first-child{
+    transition: all 0.5s;
+}
+/* 제이쿼리 */
+.loading-wrap .txt-load.on{
+    opacity: 1;
+    transform: translate(0px, -50px);
+}
+
+
+/* 헤더 */
+.header{
+    background: transparent;
+    /* background: #000; */
+    color: #fff;
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.header .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 2.75em; */
+}
+.header .logo{
+    /* height: 2.75em; */
+}
+.header .logo a{
+    display: inline-block;
+    height: 2.75em;
+    line-height: 2.75em;
+}
+.header .logo .logo-wrap{
+    padding: 0 calc(clamp(1.5em, 4vw, 2.5em) / 2);
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.header .logo .logo-dot{
+    display: inline-block;
+    padding-right: 0.21em;
+    transition: all .5s cubic-bezier(.7, 0, .3, 1);
+}
+.header .logo .logo-txt{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    /* height: 100%; */
+    overflow: hidden;
+    transition: all .5s cubic-bezier(.7, 0, .3, 1);
+
+    padding-right: 11px;
+}
+.header .logo .logo-txt .txt1{
+    position: relative;
+    display: inline-block;
+    transition: all .5s cubic-bezier(.7, 0, .3, 1);
+}
+.header .logo .logo-txt .txt2{
+    padding-left: 0.21em;
+    padding-right: 0.2em;
+
+    position: absolute;
+    transition: all .5s cubic-bezier(.7, 0, .3, 1);
+}
+.header .logo .logo-txt .txt2 i{
+    display: inline-block;
+
+    position: absolute;
+    padding-left: 0.21em;
+    transition: all .5s cubic-bezier(.7, 0, .3, 1);
+    top: 0;
+    left: 0;
+    transform: translateX(3.25em);
+    white-space: nowrap;
+}
+
+.header .logo:hover .logo-dot{
+    transform: rotate(360deg);
+}
+.header .logo:hover .txt1{
+    transform: translateX(-3.7em);
+}
+.header .logo:hover .txt2{
+    transform: translateX(-3.7em) rotate(0.001deg);
+}
+.header .logo:hover .logo-txt{
+    /* padding-right: 2em; */
+    padding-right: 3em;
+}
+
+
+/*nav-area  */
+.header .nav-area{
+    display: flex;
+    align-items: center;
+}
+.header .nav-area .link-nav{
+    position: relative;
+    padding: 0 calc(clamp(1.5em, 4vw, 2.5em) / 2);
+    height: 2.75em;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.header .nav-area .link-nav::after{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    bottom: -0.5em;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.5s;
+}
+.header .nav-area .link-nav:hover::after{
+    transform: translate(-50%, -50%) scale(1)
+}
+
+
+/* 메뉴 */
+.header .menu-area{}
+.header .menu-area .btn-menu{}
+.header .menu-area .btn-menu .btn-line{}
+.header .menu-area .pan{}
+
+.header .menu-area .menu-wrap{}
+.header .menu-wrap .menu-box{}
+.header .menu-wrap .menu-box em{}
+.header .menu-wrap .menu-list{}
+.header .menu-wrap .menu-item{}
+.header .menu-wrap .menu-item a{}
