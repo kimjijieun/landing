@@ -19,9 +19,7 @@ body::-webkit-scrollbar {
 }
 
 
-.inner{
-    padding: calc(clamp(1.5em, 4vw, 2.5em) / 2) calc(clamp(1.5em, 4vw, 2.5em) / 2)
-}
+.inner{padding: 20.4px;}
 .inner1{padding: 0 218px;}
 .inner2{padding: 0 109px;}
 
@@ -55,6 +53,15 @@ body::-webkit-scrollbar {
     transition: background-color ease-in-out .25s;
 }
 .col{padding-left: 109px;}
+.title{
+    margin-bottom: 1.5em;
+    line-height: 1.065;
+    /* margin-bottom: 1em; */
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    opacity: .5;
+    font-size: 10px;
+}
 
 
 .dot{
@@ -65,7 +72,7 @@ body::-webkit-scrollbar {
     left: 0;
     top: 47%;
     bottom: auto;
-    width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
-    height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+    width: 9.9px;
+    height: 9.9px;
     transform: translate(0, 0) scale(1);
 }

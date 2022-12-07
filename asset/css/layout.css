@@ -11,9 +11,9 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 99;
+    z-index: 999;
 
-    display: none;
+    /* display: none; */
     /* top으로 -100% 제이쿼리 */
 }
 .loading-wrap .txt-load{
@@ -48,7 +48,7 @@
 /* 제이쿼리 */
 .loading-wrap .txt-load.on{
     opacity: 1;
-    transform: translate(0px, -50px);
+    /* transform: translate(0px, -50px); */
 }
 
 
@@ -172,14 +172,246 @@
 
 
 /* 메뉴 */
-.header .menu-area{}
-.header .menu-area .btn-menu{}
-.header .menu-area .btn-menu .btn-line{}
+.header .menu-area{
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 521px;
+    background: #1C1D20;
+    z-index: 100;
+    /* transform: translate(calc(100% + 6vw),0) rotate(0.001deg); */
+
+    transform: translateX(100%);
+    
+    transition: transform .8s cubic-bezier(.7, 0, .2, 1);
+    /* padding: 15vh 7.5vw 10vh 7.5vw; */
+}
+/* 버튼 */
+.header .menu-area .btn-menu{
+    position: fixed;
+    width: 75px;
+    height: 75px;
+    z-index: 999;
+    background: #000;
+    border-radius: 50%;
+
+    transition: transform .4s cubic-bezier(0.34, 1.5, 0.64, 1);
+    transform: translateY(0%) scale(1);
+    /* transform: translateY(0%) scale(0); */
+
+    top: calc(clamp(1.5em, 4vw, 2.5em) / 1.5);
+    right: calc(clamp(1.5em, 4vw, 2.5em) / 1.5);
+    overflow: hidden;
+}
+/* 제이쿼리 */
+.header .menu-area .btn-menu.active body{overflow: hidden;}
+.header .menu-area .btn-menu.active .menu-area{
+    transform: translateX(0);
+}
+.header .menu-area .btn-menu.active .dimmed{
+    opacity: .35;
+}
+
+
+
+.header .menu-area .btn-menu .line-box{
+    position: relative;
+    width: 23%;
+    height: 8%;
+    opacity: 1;
+    box-sizing: border-box;
+}
+.header .menu-area .btn-menu .btn-line{
+    display: block;
+    position: absolute;
+    left: 50%;
+    height: 1px;
+    width: 100%;
+    transform: translate(-50%, -50%) rotate(0.001deg);
+    background: #fff;
+}
+.header .menu-area .btn-menu .line-top{
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+.header .menu-area .btn-menu .line-bottom{
+    top: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/* 제이쿼리 */
+.header .menu-area .btn-menu.active .line-top{
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.header .menu-area .btn-menu.active .line-bottom{
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dimmed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(to right,hsla(220, 13%, 0%, .3) 40%, hsla(220, 13%, 0%, 1) 80%);
+    opacity: 0;
+    transition: opacity .8s cubic-bezier(.7, 0, .2, 1);
+    z-index: 99;
+    pointer-events: none;
+    /* will-change: opacity; */
+
+    opacity: 0;
+}
+
+
 .header .menu-area .pan{}
 
-.header .menu-area .menu-wrap{}
+.header .menu-area .menu-wrap{
+    height: 100%;
+    padding: 15vh 7.5vw 10vh 7.5vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: all .6s cubic-bezier(.7, 0, .2, 1);
+    box-sizing: border-box;
+}
 .header .menu-wrap .menu-box{}
-.header .menu-wrap .menu-box em{}
-.header .menu-wrap .menu-list{}
-.header .menu-wrap .menu-item{}
-.header .menu-wrap .menu-item a{}
+.header .menu-wrap .menu-box .title{
+    display: block;
+}
+.header .menu-wrap .menu-box .title::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 3em;
+}
+.header .menu-wrap .menu-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.header .menu-wrap .menu-item{
+    width: 100%;
+    position: relative;
+    right: 36px;
+}
+.header .menu-wrap .menu-item .dot{
+    display: inline-block;
+    background: #fff;
+    /* left: 0; */
+    top: 50%;
+    bottom: auto;
+
+    left: calc(clamp(1.5em, 4vw, 2.5em) / -4);
+    transform: translate(35%, -50%);
+    transition: all 0.5s;
+}
+.header .menu-wrap .menu-item::before{
+    content: '';
+    display: inline-block;
+    background: #fff;
+    /* left: 0; */
+    top: 50%;
+    bottom: auto;
+    width: 9.9px;
+    height: 9.9px;
+    position: absolute;
+    border-radius: 50%;
+    left: calc(clamp(1.5em, 4vw, 2.5em) / -4);
+    
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.5s;
+}
+
+.header .menu-wrap .menu-item:hover::before{
+    transform: translate(-50%, -50%) scale(1);
+}
+/* .header .menu-wrap .menu-item:hover .dot{
+    transform: scale(0);
+} */
+.header .menu-wrap .menu-item a{
+    font-size: 3em;
+    line-height: 1.25;
+    display: block;
+    padding: 0 36px;
+}
+.header .menu-wrap .menu-title{
+    margin-bottom: 1em;
+}
+.header .menu-wrap .menu-box .menu-title.title::after{
+    content: '';
+    display: none;
+}
+.header .menu-wrap .social-list{
+    display: flex;
+    align-items: center;
+}
+.header .menu-wrap .social-item{
+    position: relative;
+    margin: 0 11.6px;
+    height: 2.25em;
+    height: 2.25em;
+    line-height: 2.25em;
+    box-sizing: border-box;
+}
+.header .menu-wrap .social-item a{
+    display: inline-block;
+    font-size: 14px;
+}
+.header .menu-wrap .social-item:first-child{
+    margin-left: 0;
+}
+.header .menu-wrap .social-item::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform: translate(-50%, -50%) scale(0,1);
+    transition: all .3s cubic-bezier(.7, 0, .3, 1);
+}
+.header .menu-wrap .social-item:hover::after{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+/* footer */
+.footer{background: #1c1d20;color: #fff;}
+.footer .inner{
+    padding: 101px 31px 23px 41px;
+    display: flex;
+    align-items: center;
+}
+.footer .footer-left{
+    margin-right: auto;
+    display: flex;
+}
+.footer .footer-left .row{padding-right: 41px;}
+
+.footer .footer-left .row span{
+    font-size: 14px;
+}
+
+.footer .footer-right{}
+.footer .footer-right .title{margin-left: 11.2px;}
+.footer .footer-right .socials-list{display: flex;}
+.footer .footer-right .socials-item{}
+.footer .footer-right .socials-item a{
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 11.6px;
+}
