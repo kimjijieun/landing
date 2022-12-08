@@ -18,6 +18,8 @@ body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
 }
 
+body.active{overflow: hidden;}
+
 
 .inner{padding: 20.4px;}
 .inner1{padding: 0 218px;}
@@ -62,6 +64,32 @@ body::-webkit-scrollbar {
     opacity: .5;
     font-size: 10px;
 }
+
+
+.pan-box{
+    position: absolute;
+    left: 1px;
+    transform: translateX(-100%);
+    height: 100%;
+    top: 0;
+    /* background: #1C1D20; */
+    width: 6vw;
+
+    /* overflow: hidden; */
+    transition: all .85s cubic-bezier(.7, 0, .2, 1);
+}
+.pan-box .pan{
+    height: 150%;
+    position: absolute;
+    width: 775%;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    background: #1C1D20;
+    transform: translate(-6.5%, -50%);
+}
+
+
 
 
 .dot{
