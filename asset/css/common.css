@@ -53,7 +53,20 @@ body.active{overflow: hidden;}
     left: -25%;
     transform: translateY(-76%);
     transition: background-color ease-in-out .25s;
+    transition: all ease-in-out .25s;
 }
+.btn:hover .btn-fill {
+    transform: translateY(0);
+}
+.btn:hover .btn-txt{
+    /* color: #fff; */
+    z-index: 99;
+    position: relative;
+}
+
+
+
+
 .col{padding-left: 109px;}
 .title{
     margin-bottom: 1.5em;
@@ -89,6 +102,37 @@ body.active{overflow: hidden;}
     transform: translate(-6.5%, -50%);
 }
 
+
+.cursor{
+    position: fixed;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    text-align: center;
+}
+
+.cursor .view{
+    width: 75px;
+    height: 75px;
+    color: #fff;
+    text-align: center;
+    line-height: 75px;
+    top: 50%;
+    left: 50%;
+
+    border-radius: 50%;
+    border: 0;
+    background: #455CE9;
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    display: block;
+    transition: width .4s cubic-bezier(0.36, 0, 0.66, 0), height .4s cubic-bezier(0.36, 0, 0.66, 0);
+
+    /* opacity: 0; */
+}
 
 
 

@@ -207,22 +207,23 @@
     line-height: 1;
     white-space: nowrap;
 
+    /* display: flex;
+    align-items: center; */
+
     animation: rolling 12s linear infinite;
 }
-.sc-intro .animate-name span{}
+.sc-intro .animate-name span{display: inline-block;}
+
+.sc-intro .animate-name.rolling{
+    animation-direction: reverse;
+}
 
 @keyframes rolling {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
-    50% {
+    100% {
         transform: translateX(-100%);
-    }
-    50.01%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(0);
     }
 }
 
@@ -230,7 +231,7 @@
 
 
 /* sc-work */
-.sc-work{}
+.sc-work{background: #fff;}
 .sc-work .work-desc{
     padding: 131px 0 86px;
     display: flex;
@@ -289,6 +290,7 @@
     height: 100%;
     box-sizing: border-box;
     z-index: 99;
+    position: relative;
 }
 
 
@@ -421,6 +423,14 @@
     height: 4.25em;
     overflow: hidden;
 }
+.sc-work .btn-more:hover .btn-fill {
+    transform: translateY(0);
+}
+.sc-work .btn-more:hover .btn-txt{
+    color: #fff;
+    z-index: 99;
+    position: relative;
+}
 .sc-work .btn-more .btn-txt{
     padding: 0 2.5em;
     color: rgb(28, 29, 32);
@@ -439,7 +449,8 @@
 
 
 .sc-output{
-    padding: 98.4px 0 97px;
+    /* padding: 98.4px 0 97px; */
+    padding: 98.4px 0 0;
 }
 .sc-output .output-list{
     width: 120vw;
@@ -448,6 +459,14 @@
     display: flex;
     /* flex-wrap: wrap; */
     position: relative;
+}
+.sc-output .output-list.list1{
+    transform: translateX(5%);
+}
+.sc-output .output-list.list2{
+    transform: translateX(-5%);
+    z-index: 99;
+    background: #fff;
 }
 .sc-output .output-list .output-item{
     width: 25%;
@@ -484,25 +503,39 @@
 }
 
 /* 스크롤시 판 */
-.sc-output .pan-wrap{
+.sc-output .pan-box{
     width: 100%;
-    top: 0;
+    top: auto;
+    bottom: 0;
     position: relative;
     height: 10vh;
-    overflow: hidden;
+    /* overflow: hidden; */
+
+    z-index: 9;
+    transform: translateX(0);
 }
-.sc-output .pan-wrap .add-pan{
+.sc-output .pan-box .pan{
     width: 150%;
-    content: "";
-    display: block;
     position: absolute;
     background: #fff;
     height: 750%;
     left: 50%;
     border-radius: 50%;
-    transform: translate(-50%, -86.666%);
+    transform: translate(-50%, -50%);
     z-index: 1;
+
+    box-shadow: 0px 18px 32px 12px #1c1d20;
 }
+.sc-output .pan-box .pan-dark{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: calc(clamp(5em, 21vh, 12em) * .75);
+    background: linear-gradient(to bottom,hsla(225, 7%, 12%) 0%, hsla(225, 7%, 12%, 0.987) 8.1%, hsla(225, 7%, 12%, 0.951) 15.5%, hsla(225, 7%, 12%, 0.896) 22.5%, hsla(225, 7%, 12%, 0.825) 29%, hsla(225, 7%, 12%, 0.741) 35.3%, hsla(225, 7%, 12%, 0.648) 41.2%, hsla(225, 7%, 12%, 0.55) 47.1%, hsla(225, 7%, 12%, 0.45) 52.9%, hsla(225, 7%, 12%, 0.352) 58.8%, hsla(225, 7%, 12%, 0.259) 64.7%, hsla(225, 7%, 12%, 0.175) 71%, hsla(225, 7%, 12%, 0.104) 77.5%, hsla(225, 7%, 12%, 0.049) 84.5%, hsla(225, 7%, 12%, 0.013) 91.9%, hsla(225, 7%, 12%, 0) 100%);
+    opacity: .75;
+}
+/* .sc-output .pan-box.active{height: 0vh;} */
 
 
 /* sc-oneself */
