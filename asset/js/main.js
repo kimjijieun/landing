@@ -6,17 +6,17 @@ $(function(){
         display:'none',
         height:0
     })
-    gsap.to('.loading-wrap .pan-box', {
-        height:0,
-        delay:0.9,
-    })
+//     gsap.to('.loading-wrap .pan-box', {
+//         height:0,
+//         delay:0.9,
+//     })
 
-    gsap.fromTo('.loading-wrap .txt-load',{
-        opacity:1
-        },{
-        duration: 1,
-        opacity:0
-   });
+//     gsap.fromTo('.loading-wrap .txt-load',{
+//         opacity:1
+//         },{
+//         duration: 1,
+//         opacity:0
+//    });
 
 
 

@@ -155,6 +155,8 @@
     /* min-height: 115vh; */
 }
 .sc-intro .intro-img img{
+    top: 15%;
+    
     width: auto;
     /* width: 100%; */
     height: 100%;
