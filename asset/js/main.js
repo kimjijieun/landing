@@ -1,34 +1,41 @@
 $(function(){
 
+    history.scrollRestoration = "manual"
 // 시작 로딩페이지
-    gsap.to('.loading-wrap', {
-        delay:1.2,
-        display:'none',
-        height:0
+
+    //글자
+    let idx = 0;
+    arrHello = ['Hello', 'Bonjour', 'स्वागत हे', 'Ciao', 'Olá', 'おい', 'Hallå', 'Guten tag', '안녕하세요'];
+    txtmotion = setInterval(() => {
+        $('.txt-load').html(arrHello[idx])
+        idx++;
+        console.log(idx);
+    }, 200);
+    setTimeout(() => {
+        clearInterval(txtmotion);
+    }, arrHello.length*200);
+    // 맨처음에 실행안된이유는 setInterval 시간이 똑같아서
+
+
+    gsap.set('body',{overflow:'hidden'})
+
+    intro = gsap.timeline({
+        onComplete:function(){
+            gsap.set('body',{overflow:'initial'})
+        }
     })
-//     gsap.to('.loading-wrap .pan-box', {
-//         height:0,
-//         delay:0.9,
-//     })
 
-//     gsap.fromTo('.loading-wrap .txt-load',{
-//         opacity:1
-//         },{
-//         duration: 1,
-//         opacity:0
-//    });
-
+    intro
+    .addLabel('a')
+    .to('.loading-wrap',{
+        delay:(arrHello.length*200*0.001)+0.5,
+        yPercent:-100
+    },'a')
+    .to('.loading-wrap .pan-box .pan',{
+        yPercent:-100
+    },'a+=2.5')
 
 
-    ld = gsap.timeline();
-
-    ld.to('.a', {opacity:1, delay:0.4});
-    ld.to('.s', {opacity:1, delay:0.5});
-    ld.to('.d', {opacity:1, delay:0.6});
-    // ld.to('.txt-load:nth-child(4)', {opacity:1, delay:0.7});
-    // ld.to('.txt-load:nth-child(4)', {opacity:0});
-    // ld.to('.txt-load:nth-child(5)', {opacity:1, delay:0.8});
-    // ld.to('.txt-load:nth-child(5)', {opacity:0});
 
 
     $('body').mousemove(function(e){
@@ -48,7 +55,8 @@ $(function(){
     $('.sc-work .work-area .work-item').mouseover(function(){
 
         gsap.to('.cursor .view',{
-            opacity:1
+            opacity:1,
+            visibility: 'visible'
         })
 
         // gsap.to('.work-area .view-box',{
@@ -58,7 +66,8 @@ $(function(){
     $('.sc-work .work-area .work-item').mouseleave(function(){
 
         gsap.to('.cursor .view',{
-            opacity:0
+            opacity:0,
+            visibility: 'hidden'
         })
     })
 
@@ -103,45 +112,43 @@ $(function(){
 
 
 // 헤더 이미지
+    
+
+    // gsap.from('.sc-intro',{
+    //     scrollTrigger:{
+    //         trigger:".sc-intro",
+    //         start:"0% 0%",
+    //         end: "100% 0%",
+    //         markers:true, //좌표표시
+    //         scrub:0,
+    //     },
+    //     yPercent:-20,
+    // })
+
     gsap.to('.sc-intro .intro-img',{
 
         scrollTrigger:{
             trigger:".sc-intro",
-            start:"top bottom",
-            end: "50% top",
-            // markers:true, //좌표표시
-            scrub:1,
+            start:"0% 0%",
+            end: "100% 0%",
+            markers:true, //좌표표시
+            scrub:0,
         },
-
-        yPercent:-2,
-        delay:2
+        yPercent:20,
     });
+    
+    // gsap.to('.sc-intro .intro-img',{
 
-    gsap.to('.sc-intro',{
+    //     scrollTrigger:{
+    //         trigger:".sc-intro",
+    //         start:"top 80%",
+    //         end: "bottom top",
+    //         markers:true, //좌표표시
+    //         scrub:0,
+    //     },
+    //     yPercent:20,
+    // });
 
-        scrollTrigger:{
-            trigger:".sc-intro",
-            start:"top bottom",
-            end: "50% top",
-            // markers:true, //좌표표시
-            scrub:1,
-        },
-
-        yPercent:-5
-    });
-
-    gsap.to('.sc-work',{
-
-        scrollTrigger:{
-            trigger:".sc-work .inner1",
-            start:"top bottom",
-            end: "bottom top",
-            // markers:true, //좌표표시
-            scrub:1,
-        },
-
-        yPercent:-5
-    });
 
 
 // 스크롤 메뉴버튼
@@ -223,7 +230,7 @@ $(function(){
             trigger:".sc-output",
             start:"top bottom",
             end: "80% bottom",
-            markers:true, //좌표표시
+            // markers:true, //좌표표시
             scrub:1,
         },
         display:'none',

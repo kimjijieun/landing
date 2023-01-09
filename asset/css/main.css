@@ -147,7 +147,7 @@
 
 
 .sc-intro .intro-img{
-    top: -10%;
+    top: 9%;
     width: 100%;
     height: 110%;
     box-sizing: border-box;
@@ -155,15 +155,13 @@
     /* min-height: 115vh; */
 }
 .sc-intro .intro-img img{
-    top: 15%;
-    
+    /* top: 9%; */
+    display: block;
+    margin: 0 auto;
     width: auto;
     /* width: 100%; */
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 
@@ -330,11 +328,9 @@
 }
 
 /* 호버이미지 */
-.sc-work .work-area .view-box{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
+.sc-work .view-box{
+    position: fixed;
+    top: 0;left: 0;
     /* width: 375px; */
     z-index: 99;
 
@@ -344,7 +340,7 @@
     overflow: hidden;
     transition: width .4s cubic-bezier(0.36, 0, 0.66, 0);
 }
-.sc-work .work-area .view-box img{
+.sc-work .view-box img{
     width: 100%;
     height: 100%;
 }
