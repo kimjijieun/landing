@@ -7,6 +7,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="./asset/css/layout.css">
     <link rel="stylesheet" href="./asset/css/main.css">
+
+    <!-- <style>
+       @font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+    </style> -->
+
 </head>
 <body>
 <div class="wrapper">
@@ -42,9 +52,9 @@
                 </a>
             </h1>
             <nav class="nav-area">
-                <a href="" class="link-nav">Work</a>
-                <a href="" class="link-nav">About</a>
-                <a href="" class="link-nav">Contact</a>
+                <a href="" class="link-nav" data-target=".work-area">Work</a>
+                <a href="" class="link-nav" data-target=".sc-output">About</a>
+                <a href="" class="link-nav" data-target=".footer">Contact</a>
             </nav>
         </div>
         <!-- 메뉴 -->
@@ -65,10 +75,10 @@
                 <div class="menu-box">
                     <em class="title">NAVIGATION</em>
                     <ul class="menu-list">
-                        <li class="menu-item"><a href=""><div class="dot"></div>Home</a></li>
-                        <li class="menu-item"><a href="">Work</a></li>
-                        <li class="menu-item"><a href="">About</a></li>
-                        <li class="menu-item"><a href="">Contact</a></li>
+                        <li class="menu-item on"><a href="#">Home</a></li>
+                        <li class="menu-item"><a href="" data-target=".work-area">Work</a></li>
+                        <li class="menu-item"><a href="" data-target=".sc-output">About</a></li>
+                        <li class="menu-item"><a href="" data-target=".footer">Contact</a></li>
                     </ul>
                 </div>
                 <div class="menu-box">
@@ -159,12 +169,15 @@
         <section class="sc-work">
             <div class="inner1">
                 <div class="work-desc">
-                    <p class="work-txt">Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.</p>
+                    <p class="work-txt work-box">
+                        <b>Helping brands to stand out in the digital era.</b>
+                        <b>Together we will set the new status quo.</b>
+                        <b>No nonsense, always on the cutting edge.</b></p>
                     <div class="btn-box">
-                        <p>
-                            The combination of my passion for design, code & interaction positions me in a unique place in the web design world.
+                        <p class="work-box">
+                            <b>The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</b>
                         </p>
-                        <a href="" class="btn btn-work">
+                        <a href="" class="btn btn-work" data-target=".footer">
                             <div class="btn-fill"></div>
                             <span class="btn-txt">About me</span>
                         </a>
@@ -175,12 +188,12 @@
             <div class="work-area">
                 <h2 class="title col">RECENT WORK</h2>
                 
-                <div class="view-box">
-                    <div class="box-wrap">
-                        <img src="./asset/images/contents/WORK1.jpg" alt="">
-                        <img src="./asset/images/contents/WORK2.jpg" alt="">
-                        <img src="./asset/images/contents/WORK3.jpg" alt="">
-                        <img src="./asset/images/contents/WORK4.jpg" alt="">
+                <div class="view-wrap">
+                    <div class="view-box">
+                        <div class="item"><img src="./asset/images/contents/WORK1.jpg" alt=""></div>
+                        <div class="item"><img src="./asset/images/contents/WORK2.jpg" alt=""></div>
+                        <div class="item"><img src="./asset/images/contents/WORK3.jpg" alt=""></div>
+                        <div class="item"><img src="./asset/images/contents/WORK4.jpg" alt=""></div>
                     </div>
                 </div>
 
@@ -289,10 +302,12 @@
             </div>
         </section>
 
+    </main>
+    <footer class="footer">
         <section class="sc-oneself">
             <div class="inner1">
                 <div class="profile-wrap">
-
+    
                     <div class="profile-box">
                         <div class="profile-txt">
                             <div class="profile"></div>
@@ -329,8 +344,6 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer class="footer">
         <div class="inner">
             <div class="footer-left">
                 <div class="row">
@@ -367,6 +380,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
 
     <script src="./asset/js/main.js"></script>
 </body>

@@ -8,6 +8,7 @@
 }
 body{
     font-family: 'NeueMontreal', 'Noto Sans KR', 'Malgun Gothic', 'sans-serif';
+    /* font-family: 'S-CoreDream-3Light'; */
 
     /* 스크롤바없애기 */
     -ms-overflow-style: none; /* IE and Edge */
@@ -41,6 +42,9 @@ body.active{overflow: hidden;}
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+
+    position: relative;
+    z-index: 9;
 }
 .btn-fill{
     position: absolute;
@@ -51,12 +55,15 @@ body.active{overflow: hidden;}
 
     top: -50%;
     left: -25%;
-    transform: translateY(-76%);
-    transition: background-color ease-in-out .25s;
-    transition: all ease-in-out .25s;
+    /* transform: translateY(-76%); */
+    transform: scale(1,0);
+    transition: transform ease-in-out 0.5s;
+    transform-origin: top;
+    
 }
 .btn:hover .btn-fill {
-    transform: translateY(0);
+    transform: scale(1,1);
+    transform-origin: bottom;
 }
 .btn:hover .btn-txt{
     /* color: #fff; */
@@ -89,7 +96,7 @@ body.active{overflow: hidden;}
     width: 6vw;
 
     /* overflow: hidden; */
-    transition: all .85s cubic-bezier(.7, 0, .2, 1);
+    /* transition: all .85s cubic-bezier(.7, 0, .2, 1); */
 }
 .pan-box .pan{
     height: 150%;
@@ -106,7 +113,7 @@ body.active{overflow: hidden;}
 .cursor{
     position: fixed;
     z-index: 100;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     pointer-events: none;
     text-align: center;
     visibility: hidden;

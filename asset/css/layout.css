@@ -231,9 +231,9 @@
 .header .btn-menu.active .menu-area{
     transform: translateX(0);
 }
-.header .btn-menu:hover .btn-fill{
+/* .header .btn-menu:hover .btn-fill{
     transform: translateY(0);
-}
+} */
 
 
 .header .btn-menu .line-box{
@@ -280,7 +280,7 @@
     height: 100%;
     width: 100%;
 
-    background: linear-gradient(to right,hsla(220, 13%, 0%, .3) 40%, hsla(220, 13%, 0%, 1) 80%);
+    background: linear-gradient(to right,hsla(220, 13%, 0%, .3) 0%, hsla(220, 13%, 0%, 1) 80%);
     opacity: 0;
     transition: opacity .8s cubic-bezier(.7, 0, .2, 1);
     z-index: 99;
@@ -290,11 +290,18 @@
     opacity: 0;
 }
 .dimmed.active{
-    opacity: 0.35;
+    opacity: 0.75;
+    z-index: 999;
+}
+.dimmed.active body{
+    overflow: hidden;
 }
 
 
-.header .pan-box{overflow: hidden;}
+.header .pan-box{
+    overflow: hidden;
+    transition: all .85s cubic-bezier(.7, 0, .2, 1);
+}
 .header .pan-box .pan{}
 /* 제이쿼리 */
 /* .header .btn-menu.active .pan-box{
@@ -341,17 +348,17 @@
     position: relative;
     right: 36px;
 }
-.header .menu-wrap .menu-item .dot{
+/* .header .menu-wrap .menu-item .dot{
     display: inline-block;
     background: #fff;
-    /* left: 0; */
+    left: 0;
     top: 50%;
     bottom: auto;
 
     left: calc(clamp(1.5em, 4vw, 2.5em) / -4);
     transform: translate(35%, -50%);
     transition: all 0.5s;
-}
+} */
 .header .menu-wrap .menu-item::before{
     content: '';
     display: inline-block;
@@ -369,12 +376,10 @@
     transition: all 0.5s;
 }
 
-.header .menu-wrap .menu-item:hover::before{
+.header .menu-wrap .menu-item.on::before{
     transform: translate(-50%, -50%) scale(1);
 }
-/* .header .menu-wrap .menu-item:hover .dot{
-    transform: scale(0);
-} */
+
 .header .menu-wrap .menu-item a{
     font-size: 3em;
     line-height: 1.25;
@@ -428,7 +433,7 @@
 
 
 /* footer */
-.footer{background: #1c1d20;color: #fff;}
+.footer{background: #1c1d20;color: #fff;height: 100vh;}
 .footer .inner{
     padding: 101px 31px 23px 41px;
     display: flex;
