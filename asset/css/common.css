@@ -23,7 +23,8 @@ body.active{overflow: hidden;}
 
 
 .inner{padding: 20.4px;}
-.inner1{padding: 0 218px;}
+.inner1{padding: 0 6vw;}
+/* .inner1{padding: 0 218px;} */
 .inner2{padding: 0 109px;}
 
 .btn{
@@ -74,7 +75,7 @@ body.active{overflow: hidden;}
 
 
 
-.col{padding-left: 109px;}
+/* .col{padding-left: 109px;} */
 .title{
     margin-bottom: 1.5em;
     line-height: 1.065;
