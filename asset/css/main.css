@@ -174,9 +174,9 @@
     transform: translateY(-50%);
     top: 50%;
     /* left: 50%; */
-    right: 0;
+    right: 6%;
     line-height: 1.4;
-    padding-right: clamp(2.5em, 8vw, 8em);
+    padding-right: clamp(2.5em, 13vw, 8em);
     /* padding-bottom: 15vh; */
 }
 .sc-intro .info-area .arrow-box{
@@ -229,13 +229,18 @@
 
 /* sc-work */
 .sc-work{background: #fff;}
+.sc-work .inner1{
+    padding-left: 218px;
+    padding-right: 218px;
+}
 .sc-work .work-desc{
     padding: 131px 0 86px;
     display: flex;
 }
 .sc-work .work-desc p{}
 .sc-work .work-desc .work-txt{
-    font-size: clamp(1.55em, 2.3vw, 2.5em);
+    /* font-size: clamp(1.55em, 2.3vw, 2.5em); */
+    font-size: clamp(1.55em, 2vw, 2.5em);
     line-height: 1.45;
     width: 70%;
     padding-right: 41px;
@@ -404,17 +409,21 @@ transform-origin: right; */
     /* padding-left: 109px; */
     transition: all .3s cubic-bezier(.7, 0, .3, 1);
 }
-.sc-work .work-area .work-wrap span{
+.sc-work .work-area .work-wrap .txt-box{
     width: 30%;
     padding-left: 16px;
     padding-right: 54.6px;
     padding-top: 1em;
+    text-align: center;
+}
+.sc-work .work-area .work-wrap span{
     display: block;
     line-height: 1.66;
     box-sizing: border-box;
     color: #1C1D20;
     transition: all .3s cubic-bezier(.7, 0, .3, 1);
 }
+.sc-work .work-area .work-wrap span:last-child{font-size: 14px;}
 .sc-work .work-area .work-item:hover h3{
     opacity: .33;
     transform: translateX(-30px);
@@ -494,7 +503,7 @@ transform-origin: right; */
 }
 .sc-output .output-list .img-box{
     position: relative;
-    padding-top: 75%;
+    padding-top: 71%;
 }
 .sc-output .output-list .img-box img{
     width: 100%;
@@ -506,9 +515,19 @@ transform-origin: right; */
     bottom: 0;
     right: 0;
 }
-.sc-output .output-list .video-box{
+
+.sc-output .output-list .video-wrap{
     position: relative;
-    padding-top: 75%;
+    padding-top: 71%;
+}
+.sc-output .output-list .video-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18em;
+    height: 11em;
+    padding-top: 0;
 }
 .sc-output .output-list .video{
     width: 100%;
@@ -520,6 +539,11 @@ transform-origin: right; */
     bottom: 0;
     right: 0;
 }
+
+.sc-output .output-list.list1 .video-wrap:nth-child(1){background: #e1dad7;}
+.sc-output .output-list.list1 .video-wrap.two{background: #c6d8a3;}
+.sc-output .output-list.list2 .video-wrap:nth-child(1){background: #b5b5b5;}
+.sc-output .output-list.list2 .video-wrap.two{background: #908d8f;}
 
 /* 스크롤시 판 */
 .sc-output .pan-box{
@@ -567,7 +591,12 @@ transform-origin: right; */
     /* overflow: hidden; */
     box-shadow: 0px 5px 0px 5px #1C1D20;
 }
-.sc-oneself .inner1{padding-top: 131px;}
+.sc-oneself .inner1{
+    padding: 131px 218px 0;
+    padding-top: 131px;
+    padding-left: 218px;
+    padding-right: 218px;
+}
 .sc-oneself .profile-wrap{}
 .sc-oneself .profile-wrap::after{
     content: '';
@@ -586,7 +615,7 @@ transform-origin: right; */
     transform: translateY(0.09em);
     border-radius: 50%;
     
-    background: url(../images/contents/man2.jpg) no-repeat center;
+    background: url(../images/favicon/me.png) no-repeat center;
     background-size: cover;
 }
 .sc-oneself .profile-wrap .profile-box{position: relative;}
@@ -664,6 +693,10 @@ transform-origin: right; */
         padding-left: calc(6vw * 2);
         padding-right: calc(6vw * 2);
     }
+    .sc-work .inner1{
+        padding-left: calc(6vw * 2);
+        padding-right: calc(6vw * 2);
+    }
     .sc-work .work-area{padding: 0 6vw;}
 
     .sc-work .view-wrap .view-box{
@@ -673,14 +706,27 @@ transform-origin: right; */
     .sc-oneself .contact-area{
         padding-top: 60px;
     }
+    .sc-intro .info-area{padding-right: 4vw;}
+    .sc-output .output-list{left: -3vw;}
+    .sc-output .output-list.list2{left: -10vw;}
+    .sc-output .output-list.list1 .output-item:first-child{display: none;}
+    .sc-output .output-list.list2 .output-item:last-child{display: none;}
+    .sc-output .output-list .output-item{width: 30%;}
 
 
 }
 @media screen and (max-width: 1023px) {
     /* *768을보고 잡아야함 */
+    .sc-oneself .inner1{
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+    .sc-oneself .profile-wrap .btn-work{right: 46px;}
 
-    .sc-intro .info-area{padding-right: 4vw;}
-    .sc-output .output-list .output-item{width: 33.333%;}
+
+    .sc-output .output-list .output-item{
+        width: 33.333%;
+    }
     .sc-oneself .contact-area{padding-top: 96px;}
 
     .sc-work .work-area .work-list{
@@ -709,6 +755,13 @@ transform-origin: right; */
         padding-top: 31px;
         /* padding-bottom: 16px; */
     }
+    .sc-work .work-area .work-wrap .txt-box{
+        padding-left: 0;
+        text-align: left;
+        /* width: 32%; */
+        width: 100%;
+        word-break: keep-all;
+    }
     .sc-work .work-area .work-wrap .work-img{
         display: block;
         overflow: hidden;
@@ -731,11 +784,21 @@ transform-origin: right; */
     .sc-work .work-area .work-item:hover span {
         transform: translateY(5px);
     }
+    .sc-output .output-list .video-box{
+        width: 11em;
+        height: 6em;
+    }
+    .sc-output .output-list{}
+
 }
 /* @media (hover: none) */
 @media screen and (max-width: 767px) {
     /* *320을 보고 잡아야함 */
     .sc-intro{min-height: 110vh;}
+    .sc-oneself .inner1{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .sc-intro .bookmark{
         position: relative;
         top: 83%;
@@ -814,5 +877,9 @@ transform-origin: right; */
     .sc-oneself .contact-area .contact-desc{
         width: 100%;
         margin-top: 7px;
+    }
+    .sc-output .output-list .video-box{
+        width: 11em;
+        height: 6em;
     }
 }

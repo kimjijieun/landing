@@ -222,7 +222,8 @@ $(function(){
     $('.header .btn-menu, .link-nav:last-child').click(function(e){
         e.preventDefault();
 
-        $('.header .btn-menu').toggleClass('active,show');
+        $('.header .btn-menu').toggleClass('active');
+        // $('.header .btn-menu').toggleClass('active, show');
         $('.header .menu-area').toggleClass('active');
         $('.dimmed').toggleClass('active');
         $('body').toggleClass('active');

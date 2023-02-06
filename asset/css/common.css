@@ -8,8 +8,7 @@
 }
 body{
     font-family: 'NeueMontreal', 'Noto Sans KR', 'Malgun Gothic', 'sans-serif';
-    /* font-family: 'S-CoreDream-3Light'; */
-
+    
     /* 스크롤바없애기 */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -17,6 +16,9 @@ body{
 }
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
+}
+.sc-work .work-desc, .txt-box{
+    font-family: 'Pretendard-Regular';
 }
 
 body.active{overflow: hidden;}
