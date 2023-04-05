@@ -2,6 +2,30 @@
 @import url(reset.css);
 @import url(common.css);
 
+.overlay-wrap{}
+.overlay-wrap .overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url(../images/bg/overlay.gif);
+    background-position: 0 0;
+    background-size: 250px;
+    opacity: 0.045;
+    pointer-events: none;
+    z-index: 99;
+}
+
 .wrapper{
     overflow: hidden;
 }
@@ -30,6 +54,8 @@
     padding-left: 0.6em;
     padding-right: 0.4em;
     font-size: calc(clamp(3.25em, 5vw, 4.5em) * .75);
+
+    font-family: 'Pretendard-Regular';
 
     /* opacity: 0; */
 }
@@ -83,6 +109,8 @@
     top: 0;
     left: 0;
     z-index: 999;
+
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 .header .inner{
     display: flex;
@@ -434,7 +462,7 @@
 
 
 /* footer */
-.footer{background: #1c1d20;color: #fff;height: 100vh;}
+.footer{background: #1c1d20;color: #fff;height: calc(100vh + 23px);}
 .footer .inner{
     padding: 101px 31px 23px 41px;
     display: flex;

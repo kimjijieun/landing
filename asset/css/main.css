@@ -1,5 +1,7 @@
 .sc-intro{
-    background: #999D9E;
+    /* background: #999D9E; */
+    background: url(../images/bg/pattern.png) center -2rem;
+    background: url(../images/bg/pattern2.png) center -2rem;
 
     /* height: 100vh; */
     min-height: 121vh;
@@ -153,6 +155,7 @@
     box-sizing: border-box;
     position: absolute;
     /* min-height: 115vh; */
+    z-index: 99;
 }
 .sc-intro .intro-img img{
     /* top: 9%; */
@@ -172,7 +175,8 @@
     color: #fff;
     transform: translate(0, -50%);
     transform: translateY(-50%);
-    top: 50%;
+    /* top: 50%; */
+    top: 29%;
     /* left: 50%; */
     right: 6%;
     line-height: 1.4;
@@ -180,26 +184,53 @@
     /* padding-bottom: 15vh; */
 }
 .sc-intro .info-area .arrow-box{
-    width: 18px;
-    height: 18px;
+    /* width: 18px;
+    height: 18px; */
+    width: 30px;
+    height: 30px;
     display: inline-block;
-    top: -12.5vh;
+    /* top: -12.5vh; */
     position: absolute;
+
+    top: -7.5vh;
+    left: -20px;
+
+    /* 흰색
+    left: -22px;
+    top: -43%; */
 }
 .sc-intro .info-area .arrow-box svg{
     width: 100%;
     height: 100%;
     display: block;
 }
-.sc-intro .info-area .arrow-txt{}
+.sc-intro .info-area .arrow-box svg:nth-child(2){
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    /* top: -75%; */
+    top: 2px;
+    left: -3px;
+}
+.sc-intro .info-area .arrow-txt{
+    box-shadow: 10px 10px 0 #2e1fff;
+    background: #1c1d20;
+    /* box-shadow: 10px 10px 0 #1c1d20; */
+    /* background: #2e1fff; */
+    /* padding: 7px; */
+    padding: 11px;
+    font-weight: 400;
+    font-family: 'Metropolis';
+
+    font-size: 26px;
+    box-sizing: border-box;
+}
 .sc-intro .info-area span{display: block;}
 
 .sc-intro .animate-name{
-    /* padding-bottom: 15vh; */
     position: absolute;
-    /* display: block; */
     font-size: max(9em, 15vw);
-    /* bottom: 15vh; */
     bottom: 8vh;
     left: 0;
     width: 100%;
@@ -207,7 +238,12 @@
     line-height: 1;
     white-space: nowrap;
 
-    animation: rolling 12s linear infinite;
+    animation: rolling 18s linear infinite;
+    font-family: 'Metropolis';
+    font-weight: bold;
+    /* color: #2e1fff; */
+    color: #455CE9;
+    opacity: 0.7;
 }
 .sc-intro .animate-name span{display: inline-block;}
 
@@ -486,14 +522,14 @@ transform-origin: right; */
     /* flex-wrap: wrap; */
     position: relative;
     background: #fff;
-    z-index: 99;
+    z-index: 9;
 }
 .sc-output .output-list.list1{
     transform: translateX(5%);
 }
 .sc-output .output-list.list2{
     transform: translateX(-5%);
-    z-index: 99;
+    z-index: 9;
     background: #fff;
 }
 .sc-output .output-list .output-item{
@@ -554,7 +590,7 @@ transform-origin: right; */
     height: 10vh;
     /* overflow: hidden; */
 
-    z-index: 9;
+    z-index: 3;
     transform: translateX(0);
 }
 .sc-output .pan-box .pan{
@@ -789,6 +825,8 @@ transform-origin: right; */
         height: 6em;
     }
     .sc-output .output-list{}
+    
+    .sc-work .view-wrap{display: none;}
 
 }
 /* @media (hover: none) */
@@ -810,16 +848,37 @@ transform-origin: right; */
         top: 0;
         right: 0;
     }
+
+    .sc-intro .intro-img{
+        left: 14%;
+        z-index: 99;
+        width: 100%;
+        height: 88%;
+        top: 14%;
+    }
     .sc-intro .info-area{
         left: 0;
         bottom: 0;
         top: auto;
         padding: 0 6vw;
+
+        top: 36vh;
+        bottom: auto;
+        left: 1px;
+        width: 41%;
+        box-sizing: border-box;
     }
     .sc-intro .info-area .arrow-box{
         transform: translate(0px, 0px);
         top: -6.5vh;
+
+        left: 14px;
+        width: 20px;height: 20px;
     }
+    .sc-intro .info-area .arrow-box svg:nth-child(2){
+        width: 20px;height: 20px;
+    }
+    .sc-intro .info-area .arrow-txt{font-size: 14px;}
     .sc-intro .globe-area{
         position: absolute;
         top: 0;
@@ -827,6 +886,7 @@ transform-origin: right; */
     }
     .sc-intro .animate-name{
         bottom: 28vh;
+        bottom: 17vh;
         animation: rolling 10s linear infinite;
     }
 

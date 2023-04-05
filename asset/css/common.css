@@ -7,7 +7,7 @@
     margin: -1px;
 }
 body{
-    font-family: 'NeueMontreal', 'Noto Sans KR', 'Malgun Gothic', 'sans-serif';
+    font-family: 'Metropolis','NeueMontreal', 'Noto Sans KR', 'Malgun Gothic', 'sans-serif';
     
     /* 스크롤바없애기 */
     -ms-overflow-style: none; /* IE and Edge */

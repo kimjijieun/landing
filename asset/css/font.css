@@ -11,3 +11,13 @@
     font-weight: 400;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Metropolis';
+    src: url(../font/Metropolis-Bold-6bb4133f720f221fea1b1d1ba89598a6.woff2) format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url(../font/Metropolis-Black-2ee7c657b1ad2a46fd8f14e93233c7f8.woff2) format('woff');
+    font-weight: 600;
+}

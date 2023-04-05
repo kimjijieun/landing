@@ -31,6 +31,10 @@
 
 </head>
 <body>
+<div class="overlay-wrap">
+    <div class="overlay"></div>
+    <div class="overlay"></div>
+</div>
 <div class="wrapper">
     <div class="cursor">
         <div class="view">View</div>
@@ -137,10 +141,20 @@
                 </div>
 
                 <div class="info-area">
-                    <div class="arrow-box" style="transform: translate(0px, 0px);">
+                    <div class="arrow-box">
                         <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="">
                             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#FFFFFF" stroke-width="1.5">
+                                <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#2b22a7" stroke-width="5">
+                                    <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                                        <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                                        <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#FFFFFF" stroke-width="5">
                                     <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
                                         <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
                                         <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
@@ -180,14 +194,15 @@
             <div class="inner1">
                 <div class="work-desc">
                     <p class="work-txt work-box">
-                        <b>능동적인 자세로 커뮤니케이션에 활발한 개발자,</b>
-                        <b>배울것이 아직 더 많지만 적극적으로 흡수, 성장하는 사람이 되겠습니다.</b>
+                        <b>원활한 소통으로 프로젝트의 완성도를 높이며, <br>
+                        작은 디테일도 놓치지 않고 UI&UX를 고려하여 퍼블리싱하고 모든일에 능동적인 자세로 임하는 퍼블리셔입니다.
+                        <br>배울것이 아직 더 많지만 적극적으로 흡수하여 성장하는 사람이 되겠습니다.</b>
                     </p>
                     <div class="btn-box">
                         <p class="work-box">
                             <b>시맨틱 태그를 통해 웹 접근성, 웹 표준을 고려하여 마크업을 하기위해 노력합니다.</b>
                         </p>
-                        <a href="https://velog.io/@kimjiji_0" class="btn btn-work" data-target=".footer">
+                        <a href="https://velog.io/@kimjiji_0" class="btn btn-work move" data-target=".footer">
                             <div class="btn-fill"></div>
                             <span class="btn-txt">velog</span>
                         </a>
@@ -202,17 +217,19 @@
                     <div class="view-box">
                         <div class="item"><img src="./asset/images/contents/naver.jpg" alt=""></div>
                         <div class="item"><img src="./asset/images/contents/seoul.jpg" alt=""></div>
-                        <div class="item"><img src="./asset/images/contents/andar.jpg" alt=""></div>
+                        <div class="item"><img src="./asset/images/contents/andar1.jpg" alt=""></div>
                         <div class="item"><img src="./asset/images/contents/navercareer.jpg" alt=""></div>
                         <div class="item"><img src="./asset/images/contents/bd.jpg" alt=""></div>
                         <div class="item"><img src="./asset/images/contents/kakao.jpg" alt=""></div>
                         <div class="item"><img src="./asset/images/contents/mac.jpg" alt=""></div>
+                        <div class="item"><img src="./asset/images/contents/earth.jpg" alt=""></div>
+                        
                     </div>
                 </div>
 
                 <ul class="work-list">
                     <li class="work-item">
-                        <a href="">
+                        <a href="https://kimjijieun.github.io/naver1/" target="_blank" >
                             <div class="work-wrap col">
                                 <div class="work-img"><img src="./asset/images/contents/naver.jpg" alt="naver"></div>
                                 <h3>Naver</h3>
@@ -225,7 +242,7 @@
                         </a>
                     </li>
                     <li class="work-item">
-                        <a href="">
+                        <a href="https://kimjijieun.github.io/SeoulCity/" target="_blank">
                             <div class="work-wrap">
                                 <div class="work-img"><img src="./asset/images/contents/seoul.jpg" alt="Seoul City Hall"></div>
                                 <h3>Seoul City Hall</h3>
@@ -237,7 +254,7 @@
                         </a>
                     </li>
                     <li class="work-item">
-                        <a href="">
+                        <a href="https://kimjijieun.github.io/Andar/" target="_blank">
                             <div class="work-wrap">
                                 <div class="work-img"><img src="./asset/images/contents/andar1.jpg" alt="Andar"></div>
                                 <h3>Andar</h3>
@@ -249,7 +266,7 @@
                         </a>
                     </li>
                     <li class="work-item">
-                        <a href="">
+                        <a href="https://kimjijieun.github.io/naverCareers/" target="_blank">
                             <div class="work-wrap">
                                 <div class="work-img"><img src="./asset/images/contents/navercareer.jpg" alt="navercareer"></div>
                                 <h3>Naver Carrer</h3>
@@ -261,7 +278,7 @@
                         </a>
                     </li>
                     <li class="work-item show">
-                        <a href="">
+                        <a href="https://kimjijieun.github.io/BD/" target="_blank">
                             <div class="work-wrap">
                                 <div class="work-img"><img src="./asset/images/contents/bd.jpg" alt="Barcelona Design"></div>
                                 <h3>Barcelona Design</h3>
@@ -273,7 +290,7 @@
                         </a>
                     </li>
                     <li class="work-item show">
-                        <a href="">
+                        <a href="https://kimjijieun.github.io/kakaopage/index.html" target="_blank">
                             <div class="work-wrap">
                                 <div class="work-img"><img src="./asset/images/contents/kakao.jpg" alt="Kakao Page"></div>
                                 <h3>Kakao Page</h3>
@@ -285,13 +302,25 @@
                         </a>
                     </li>
                     <li class="work-item show">
-                        <a href="">
+                        <a href="https://kimjijieun.github.io/macBook/" target="_blank">
                             <div class="work-wrap">
-                                <div class="work-img"><img src="./asset/images/contents/mac.jpg" alt=""></div>
+                                <div class="work-img"><img src="./asset/images/contents/mac.jpg" alt="mac"></div>
                                 <h3>Macbook</h3>
                                 <div class="txt-box">
                                     <span>Responsive</span>
-                                    <span>반응형 PC사이트</span>
+                                    <span>반응형 웹사이트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="work-item show">
+                        <a href="https://kimjijieun.github.io/earthfoam/" target="_blank">
+                            <div class="work-wrap">
+                                <div class="work-img"><img src="./asset/images/contents/earth.jpg" alt="earthfoam"></div>
+                                <h3>Earthfoam</h3>
+                                <div class="txt-box">
+                                    <span>Responsive</span>
+                                    <span>반응형 웹사이트</span>
                                 </div>
                             </div>
                         </a>
@@ -360,7 +389,7 @@
                     <div class="video-wrap two">
                         <div class="video-box">
                             <video loop muted playsinline autoplay class="video" >
-                                <source src="./asset/images/contents/roll5.mp4" type="video/mp4">
+                                <source src="./asset/images/contents/roll8-1.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -400,7 +429,7 @@
                             </svg>
                         </i>
                     </div>
-                    <a href="mailto:kimjiji96@naver.com" class="btn btn-work">
+                    <a href="mailto:kimjiji96@naver.com" class="btn btn-work move">
                         <div class="btn-fill"></div>
                         <span class="btn-txt">Get in touch</span>
                     </a>

@@ -76,9 +76,13 @@ $(function(){
     // 호버시 view생김
     $('.sc-work .work-area .work-item').mouseover(function(){
 
+        // var x = ((-$(this).width() / 2) + e.offsetX) *0.6;
+        // var y = ((-$(this).height() / 2) + e.offsetY) *0.6;
+
         gsap.to('.cursor .view, .view-wrap',{
             opacity:1,
-            visibility: 'visible'
+            visibility: 'visible',
+            // transform:"translate(" + x + "px," + y + "px)"
         })
 
         idx = $(this).index();
@@ -91,7 +95,8 @@ $(function(){
 
         gsap.to('.cursor .view, .view-wrap',{
             opacity:0,
-            visibility: 'hidden'
+            visibility: 'hidden',
+            // transform:"translate(0,0)"
         })
     })
     
@@ -121,7 +126,18 @@ $(function(){
     $('.sc-work .btn-more').click(function(e){
         e.preventDefault();
         $('.sc-work .btn-more').addClass('show')
-        $('.work-item').removeClass('show');
+        // $('.work-item').removeClass('show');
+        $('.work-item').slideDown(800);
+
+        // gsap.fromTo(".sc-work .work-item.show", {
+        //         opacity: 0,
+        //         yPercent:20,
+        //         stagger:0.3, }
+        //     ,{
+        //         opacity: 1,
+        //         yPercent:0,
+        //         stagger:0.3,
+        // });
     })
 
 
@@ -165,9 +181,16 @@ $(function(){
 
         let rolling = gsap.timeline({})
 
-        // if (curr < 0) {
-        //     $('.header .btn-menu').addClass('show');
-        // }
+        $(window).resize(function(){
+
+            // if (window.innerWidth < 767){
+            //     if(curr = 0){
+            //         $('.link-nav').click(function(){
+            //             $('.header .btn-menu').addClass('on');
+            //         })
+            //     }
+            // }
+        }).resize();
 
         if (curr > 100) {
             $('.header .btn-menu').addClass('on');
