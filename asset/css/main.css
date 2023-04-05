@@ -268,9 +268,10 @@
 .sc-work .inner1{
     padding-left: 218px;
     padding-right: 218px;
+    /* height: 90vh; */
 }
 .sc-work .work-desc{
-    padding: 131px 0 86px;
+    padding: 131px 0 212px;
     display: flex;
 }
 .sc-work .work-desc p{}
@@ -280,6 +281,9 @@
     line-height: 1.45;
     width: 70%;
     padding-right: 41px;
+
+    word-break: keep-all;
+    letter-spacing: -0.5px;
 }
 .sc-work .work-desc .work-box{
     overflow: hidden;
@@ -620,12 +624,13 @@ transform-origin: right; */
 /* sc-oneself */
 .sc-oneself{
     background: #1c1d20;
+    /* background: #4256d2; */
 
     width: 100%;
     /* height: 100vh; */
     position: relative;
     /* overflow: hidden; */
-    box-shadow: 0px 5px 0px 5px #1C1D20;
+    /* box-shadow: 0px 5px 0px 5px #1C1D20; */
 }
 .sc-oneself .inner1{
     padding: 131px 218px 0;
@@ -898,15 +903,17 @@ transform-origin: right; */
         padding: 62.2px 0 86px;
         flex-direction: column;
     }
-    .sc-work .work-desc .work-txt{width: 100%;}
+    .sc-work .work-desc .work-txt{width: 100%;letter-spacing: -1.4px;}
     .sc-work .work-desc .btn-box{
         width: 100%;
         padding-left: 0;
     }
     .sc-work .work-desc .btn-box p{
         padding-top: 31px;
+        word-break: keep-all;
+        max-width: 12em;
     }
-    .sc-work .btn-work{right: 0;}
+    .sc-work .btn-work{right: 0;top: 41%;}
     .sc-work .work-area{margin-top: 107px;}
     .sc-work .work-area .title{
         padding-bottom: 5px;

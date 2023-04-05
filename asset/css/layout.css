@@ -462,7 +462,7 @@
 
 
 /* footer */
-.footer{background: #1c1d20;color: #fff;height: calc(100vh + 23px);}
+.footer{background: #1c1d20;color: #fff;height: calc(100vh + 23px);/* background: #4256d2; */}
 .footer .inner{
     padding: 101px 31px 23px 41px;
     display: flex;
