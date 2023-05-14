@@ -1,7 +1,8 @@
 .sc-intro{
     /* background: #999D9E; */
-    background: url(../images/bg/pattern.png) center -2rem;
-    background: url(../images/bg/pattern2.png) center -2rem;
+    /* background: url(../images/bg/pattern.png) center -2rem;
+    background: url(../images/bg/pattern2.png) center -2rem; */
+    background: url(../images/bg/pattern4.png) center -2rem;
 
     /* height: 100vh; */
     min-height: 121vh;
@@ -636,7 +637,7 @@ transform-origin: right; */
     padding-left: 218px;
     padding-right: 218px;
 }
-.sc-oneself .profile-wrap{}
+.sc-oneself .profile-wrap{position: relative;}
 .sc-oneself .profile-wrap::after{
     content: '';
     background-color: rgba(255, 255, 255, 0.2);
@@ -683,8 +684,6 @@ transform-origin: right; */
 .sc-oneself .profile-wrap .btn-work{
     position: absolute;
     display: block;
-    /* width: 163px;
-    height: 163px; */
     width: clamp(9em, 12vw, 11em);
     height: clamp(9em, 12vw, 11em);
     border-radius: 50%;
@@ -692,9 +691,8 @@ transform-origin: right; */
     border: 0;
     color: #fff;
     text-align: center;
-    right: 16%;
-    /* top: 0; */
-    transform: translate(-50%, -50%);
+    top: 66%;
+    right: 11%;
     overflow: hidden;
 }
 .sc-oneself .profile-wrap .btn-work .btn-fill{

@@ -46,27 +46,26 @@ $(function(){
             x:xVal,
             y:yVal
         })
-        gsap.to('.view-wrap',{
+        gsap.to('.view-wrap',1,{
             x:xVal,
             y:yVal
         })
         
     })
 
-    $('.move').mousemove(function(e){
+    $('.move, .btn-txt').mousemove(function(e){
 
         console.log(e.offsetX);
-        var x = ((-$(this).width() / 2) + e.offsetX) *0.6;
-        var y = ((-$(this).height() / 2) + e.offsetY) *0.6;
+        var x = ((-$(this).width() / 2) + e.offsetX) *0.2;
+        var y = ((-$(this).height() / 2) + e.offsetY) *0.2;
     
-        gsap.to('.move', {
+        gsap.to($(this), {
             transform:"translate(" + x + "px," + y + "px)"
         })
     })
 
-    $('.move').mouseleave(function(){
-
-        gsap.to('.move', {
+    $('.move, .btn-txt').mouseleave(function(){
+        gsap.to($(this), {
             transform:"translate(0,0)"
         })
     })
@@ -76,13 +75,9 @@ $(function(){
     // 호버시 view생김
     $('.sc-work .work-area .work-item').mouseover(function(){
 
-        // var x = ((-$(this).width() / 2) + e.offsetX) *0.6;
-        // var y = ((-$(this).height() / 2) + e.offsetY) *0.6;
-
         gsap.to('.cursor .view, .view-wrap',{
             opacity:1,
             visibility: 'visible',
-            // transform:"translate(" + x + "px," + y + "px)"
         })
 
         idx = $(this).index();
@@ -96,7 +91,6 @@ $(function(){
         gsap.to('.cursor .view, .view-wrap',{
             opacity:0,
             visibility: 'hidden',
-            // transform:"translate(0,0)"
         })
     })
     
@@ -129,15 +123,6 @@ $(function(){
         // $('.work-item').removeClass('show');
         $('.work-item').slideDown(800);
 
-        // gsap.fromTo(".sc-work .work-item.show", {
-        //         opacity: 0,
-        //         yPercent:20,
-        //         stagger:0.3, }
-        //     ,{
-        //         opacity: 1,
-        //         yPercent:0,
-        //         stagger:0.3,
-        // });
     })
 
 
@@ -157,17 +142,6 @@ $(function(){
         yPercent:20,
     });
 
-    // gsap.to('.sc-intro',{
-
-    //     scrollTrigger:{
-    //         trigger:".sc-intro",
-    //         start:"0% 0%",
-    //         end: "100% 0%",
-    //         // markers:true, //좌표표시
-    //         scrub:0,
-    //     },
-    //     yPercent:10,
-    // });
     
 
 
@@ -181,65 +155,13 @@ $(function(){
 
         let rolling = gsap.timeline({})
 
-        $(window).resize(function(){
-
-            // if (window.innerWidth < 767){
-            //     if(curr = 0){
-            //         $('.link-nav').click(function(){
-            //             $('.header .btn-menu').addClass('on');
-            //         })
-            //     }
-            // }
-        }).resize();
 
         if (curr > 100) {
             $('.header .btn-menu').addClass('on');
-            $('.sc-intro .animate-name').addClass('rolling');
-
-            // gsap.to('.animate-name', {
-            //     duration:10,
-            //     xPercent:100,
-            //     repeat: -1 //무한
-            // })
-            // rolling.to('.animate-name', {
-            //     duration:10,
-            //     xPercent:100,
-            //     repeat: -1
-            // })
-
-            // 푸터부분 스크롤시 박스
-            // if (curr >= oneselfHeight) {
-            //     $('.sc-output .pan-box').addClass('active')
-            // } else {
-            //     $('.sc-output .pan-box').removeClass('active')
-            // }
         } else {
             $('.header .btn-menu').removeClass('on');
-            $('.sc-intro .animate-name').removeClass('rolling');
-
-            // rolling.reverse();
-
-            // gsap.to('.animate-name', {
-            //     duration:10,
-            //     xPercent:-100,
-            //     repeat: -1
-            // })
         }
     });
-
-    // gsap.to('.animate-name', {
-    //     duration:10,
-    //     scrollTrigger:{
-    //         trigger:".sc-intro",
-    //         start:"0% 0%",
-    //         end: "100% 0%",
-    //         markers:true, //좌표표시
-    //         scrub:0,
-    //          yoyo: true, //애니반복
-    //         toggleActions: 'reverse',
-    //     },
-    //     xPercent:-100,
-    // })
 
 
     $('.header .btn-menu, .link-nav:last-child').click(function(e){
@@ -252,6 +174,16 @@ $(function(){
         $('body').toggleClass('active');
         $('.link-nav:last-child').toggleClass('show');
         
+        // 모바일, 내릴때 버튼보이기
+        if ($(window).scrollTop() == 0) {
+            if ($('.header .btn-menu').hasClass('on')) {
+                $('.header .btn-menu').removeClass('on');
+            }else {
+            $('.header .btn-menu').addClass('on');
+            }
+        } 
+
+
         
         if ($("body").hasClass('active')) {
             $('body').css('overflow','hidden');
@@ -262,50 +194,6 @@ $(function(){
         
     });
 
-
-    // gsap.fromTo('.work-desc .work-box b',{
-    //     yPercent:-100,
-    //     opacity: 0
-    // },{
-    //     yPercent: 0,
-    //     opacity: 1,
-    //     scrollTrigger: {
-    //         trigger: '.sc-work .work-desc',
-    //         start: '30% 70%',
-    //         end: '50% 70%',
-    //         markers: true,
-    //         scrub:1,
-    //         toggleActions: 'play reverse play reverse',
-    //     },
-    // })
-
-    // gsap.to('.work-desc .work-box b',{
-    //     yPercent: 0,
-    //     opacity: 1,
-    //     scrollTrigger: {
-    //         trigger: '.sc-work .work-desc',
-    //         start: '30% 70%',
-    //         end: '50% 70%',
-    //         markers: true,
-    //         scrub:1,
-    //         toggleActions: 'play reverse play reverse',
-    //     }
-    // })
-
-
-    // gsap.from('.work-desc .work-box',{
-    //     yPercent: 20,
-    //     opacity: 0,
-    //     stagger:0.5,
-    //     scrollTrigger: {
-    //         trigger: '.sc-work .work-desc',
-    //         start: '20% 70%',
-    //         end: '20% 70%',
-    //         // markers: true,
-    //         scrub:1,
-    //         // toggleActions: 'play reverse play reverse',
-    //     }
-    // })
 
     gsap.fromTo('.work-desc .work-box, .work-desc .btn-work',{
         y: 50,
@@ -372,4 +260,19 @@ $(function(){
         yPercent:-100,
         height:0
     });
+
+
+    // footer 버튼 움직이기
+    // gsap.to('.sc-oneself .profile-wrap .btn-work',{
+
+    //     scrollTrigger:{
+    //         trigger:".footer",
+    //         start:"top 50%",
+    //         end: "70% 20%",
+    //         markers:true,
+    //         scrub:1,
+    //     },
+
+    //     xPercent:30,
+    // });
 })

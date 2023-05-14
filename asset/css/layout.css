@@ -277,7 +277,7 @@
     position: absolute;
     left: 50%;
     height: 1px;
-    width: 100%;
+    width: 130%;
     transform: translate(-50%, -50%);
     transition: all .3s cubic-bezier(.7, 0, .3, 1);
     background: #fff;
@@ -376,6 +376,7 @@
     width: 100%;
     position: relative;
     right: 36px;
+    margin-bottom: 2%;
 }
 /* .header .menu-wrap .menu-item .dot{
     display: inline-block;
@@ -462,7 +463,15 @@
 
 
 /* footer */
-.footer{background: #1c1d20;color: #fff;height: calc(100vh + 23px);/* background: #4256d2; */}
+.footer{
+    /* background: #1c1d20; */
+    background: url(../images/bg/pattern3.png);
+    color: #fff;
+    height: calc(100vh + 23px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .footer .inner{
     padding: 101px 31px 23px 41px;
     display: flex;
