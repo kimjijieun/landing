@@ -110,7 +110,6 @@
     left: 0;
     z-index: 999;
 
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 .header .inner{
     display: flex;
@@ -464,8 +463,7 @@
 
 /* footer */
 .footer{
-    /* background: #1c1d20; */
-    background: url(../images/bg/pattern3.png);
+    background: #1c1d20;
     color: #fff;
     height: calc(100vh + 23px);
     display: flex;

@@ -1,8 +1,5 @@
 .sc-intro{
-    /* background: #999D9E; */
-    /* background: url(../images/bg/pattern.png) center -2rem;
-    background: url(../images/bg/pattern2.png) center -2rem; */
-    background: url(../images/bg/pattern4.png) center -2rem;
+    background: #999D9E;
 
     /* height: 100vh; */
     min-height: 121vh;
@@ -174,7 +171,7 @@
     position: absolute;
     font-size: clamp(1.55em, 2.3vw, 2.5em);
     color: #fff;
-    transform: translate(0, -50%);
+    /* transform: translate(0, -50%); */
     transform: translateY(-50%);
     /* top: 50%; */
     top: calc(50% + 3px);
@@ -183,18 +180,14 @@
     padding-right: clamp(2.5em, 13vw, 8em);
     /* padding-bottom: 15vh; */
 }
-.sc-intro .info-area.Minfo-area{display: none;}
 .sc-intro .info-area .arrow-box{
-    /* width: 18px;
-    height: 18px; */
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
+    width: clamp(0.7em, 1.3vw, 1.25em);
     display: inline-block;
     /* top: -12.5vh; */
     position: absolute;
-
-    left: -1.5vw;
-    top: -8.5vh;
+    top: -10.5vh;
 
     /* 흰색
     left: -22px;
@@ -205,43 +198,31 @@
     height: 100%;
     display: block;
 }
-.sc-intro .info-area .arrow-box svg:nth-child(2){
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    position: absolute;
-    /* top: -75%; */
-    top: 2px;
-    left: -3px;
-}
 .sc-intro .info-area .arrow-txt{
-    box-shadow: 10px 10px 0 #2e1fff;
-    background: #1c1d20;
-    padding: 1rem;
     /* font-size: 1.6rem; */
-    font-size: 1.9vw;
+    /* font-size: 1.9vw; */
     font-weight: 400;
     font-family: 'Metropolis';
     box-sizing: border-box;
 }
 .sc-intro .info-area span{display: block;}
 
-.sc-intro .animate-name{
+.sc-intro .animate-box{
+    display: flex;
     position: absolute;
-    font-size: max(9em, 15vw);
-    /* bottom: 8vh; */
     bottom: 3vh;
-    left: 0;
+}
+.sc-intro .animate-name{
+    font-size: max(9em, 15vw);
     width: 100%;
     color: #fff;
     line-height: 1;
     white-space: nowrap;
 
-    animation: rolling 18s linear infinite;
+    animation: rolling 45s linear infinite;
     font-family: 'Metropolis';
-    font-weight: bold;
-    /* color: #2e1fff; */
-    color: #455CE9;
+    /* font-weight: bold; */
+    color: #fff;
     opacity: 0.7;
 }
 .sc-intro .animate-name span{display: inline-block;}
@@ -443,7 +424,7 @@ transform-origin: right; */
 .sc-work .work-area .work-wrap .work-img{display: none;}
 .sc-work .work-area .work-wrap h3{
     padding: 0 6vw;
-    font-size: calc(clamp(3.25em, 7vw, 8em) * .75);
+    font-size: calc(clamp(3.25em, 5.6vw, 8em) * .75);
     width: 70%;
     /* padding-left: 109px; */
     transition: all .3s cubic-bezier(.7, 0, .3, 1);
@@ -632,10 +613,7 @@ transform-origin: right; */
     /* box-shadow: 0px 5px 0px 5px #1C1D20; */
 }
 .sc-oneself .inner1{
-    padding: 131px 218px 0;
-    padding-top: 131px;
-    padding-left: 218px;
-    padding-right: 218px;
+    padding: clamp(5em, 21vh, 12em) 218px 0;
 }
 .sc-oneself .profile-wrap{position: relative;}
 .sc-oneself .profile-wrap::after{
@@ -663,7 +641,7 @@ transform-origin: right; */
     /* font-size: 83.6px; */
     font-size: calc(clamp(3.25em, 7vw, 8em) * .875);
     color: #fff;
-    padding-bottom: 65.6px;
+    padding-bottom: 9vh;
     display: block;
 }
 .sc-oneself .profile-wrap .profile-txt span:nth-child(3){
@@ -699,7 +677,7 @@ transform-origin: right; */
     background-color: #334BD3;
 }
 
-.sc-oneself .contact-area{padding-top: 32px;}
+.sc-oneself .contact-area{padding-top: 9vh;}
 .sc-oneself .contact-area .contact-desc{
     box-shadow: inset 0px 0px 0px 1px rgb(255 255 255 / 20%);
     position: relative;
@@ -743,7 +721,7 @@ transform-origin: right; */
     .sc-oneself .contact-area{
         padding-top: 60px;
     }
-    .sc-intro .info-area{padding-right: 4vw;}
+    .sc-intro .info-area{padding-right: 1vw;}
     .sc-output .output-list{left: -3vw;}
     .sc-output .output-list.list2{left: -10vw;}
     .sc-output .output-list.list1 .output-item:first-child{display: none;}
@@ -755,10 +733,9 @@ transform-origin: right; */
 @media screen and (max-width: 1023px) {
     /* *768을보고 잡아야함 */
     .sc-oneself .inner1{
-        padding-left: 75px;
-        padding-right: 75px;
+        padding-left: calc(6vw * 2);
+        padding-right: calc(6vw * 2);
     }
-    .sc-oneself .profile-wrap .btn-work{right: 46px;}
 
 
     .sc-output .output-list .output-item{
@@ -790,6 +767,7 @@ transform-origin: right; */
         padding: 0;
         width: 100%;
         padding-top: 31px;
+        font-size: calc(clamp(1.75em, 2.3vw, 2.5em) * 1.125);
         /* padding-bottom: 16px; */
     }
     .sc-work .work-area .work-wrap .txt-box{
@@ -844,18 +822,14 @@ transform-origin: right; */
     }
     .sc-intro .bookmark .bookmark-txt{display: none;}
     .sc-intro .bookmark svg{display: none;}
-    .sc-intro .globe-area{
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
+    .sc-intro .intro-wrap{z-index: 99;}
 
     .sc-intro .intro-img{
         left: 6%;
         z-index: 99;
         width: 100%;
         height: 88%;
-        top: 14%;
+        top: 12.5%;
     }
     .sc-intro .info-area{
         box-sizing: border-box;
@@ -866,20 +840,7 @@ transform-origin: right; */
         width: 91%;
         left: 49%;
         transform: translate(-50%, -50%);
-        /* z-index: 999; */
-        display: none;
-    }
-    .sc-intro .info-area.Minfo-area{
-        display: block;
-        box-sizing: border-box;
-        padding: 0;
-
-        top: auto;
-        bottom: 8%;
-        width: 91%;
-        left: 49%;
-        transform: translate(-50%, -50%);
-        z-index: 99;
+        z-index: 999;
     }
     .sc-intro .info-area .arrow-box{
         top: -6.5vh;
@@ -888,26 +849,20 @@ transform-origin: right; */
         width: 4.5%;
         height: auto;
     }
-    .sc-intro .info-area .arrow-box svg:nth-child(2){
-        width: 4.5%;
-        height: auto;
-    }
+
     .sc-intro .info-area .arrow-txt{
-        font-size: 4vw;
-        color: #223055;
-        padding: 0.7rem;
-        border: 1px solid;
-        background: rgb(243 218 197 / 80%);
-        box-shadow: 10px 10px 0 #064acb;
+        font-size: 5vw;
     }
     .sc-intro .globe-area{
         position: absolute;
-        top: 0;
-        right: 5%;
+        right: 1.5%;
+    }
+    .sc-intro .animate-box{
+        bottom: 23.5vh;
     }
     .sc-intro .animate-name{
         bottom: 25vh;
-        animation: rolling 10s linear infinite;
+        animation: rolling 55s linear infinite;
     }
 
     .inner1{
@@ -949,12 +904,15 @@ transform-origin: right; */
 
     .sc-work{
         position: relative;
-        z-index: 99;
+        z-index: 9;
     }
     .sc-output{padding: 0;}
     .sc-output .output-list{display: none;}
 
-    .sc-oneself .profile-wrap .btn-work{right: -37px;}
+    .sc-oneself .profile-wrap .btn-work{
+        top: 50%;
+        right: 11%;
+    }
     .sc-oneself .contact-area{padding-top: 82px;}
     .sc-oneself .contact-area .contact-desc{
         width: 100%;
