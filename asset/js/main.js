@@ -53,7 +53,7 @@ $(function(){
         
     })
 
-    $('.move, .btn-txt').mousemove(function(e){
+    $('.move, .btn-txt, .work-box .arrow').mousemove(function(e){
 
         console.log(e.offsetX);
         var x = ((-$(this).width() / 2) + e.offsetX) *0.2;
@@ -64,7 +64,7 @@ $(function(){
         })
     })
 
-    $('.move, .btn-txt').mouseleave(function(){
+    $('.move, .btn-txt, .work-box .arrow').mouseleave(function(){
         gsap.to($(this), {
             transform:"translate(0,0)"
         })
