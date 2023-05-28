@@ -438,6 +438,10 @@ transform-origin: right; */
     padding-right: 54.6px;
     padding-top: 1em;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .sc-work .work-area .work-wrap span{
     display: block;
@@ -448,8 +452,10 @@ transform-origin: right; */
     text-align: center;
     padding: 0 20%;
     word-break: keep-all;
+    font-size: 14px;
 }
-.sc-work .work-area .work-wrap span:last-child{font-size: 14px;}
+.sc-work .work-area .work-wrap span:first-child{font-size: 16px;}
+.sc-work .work-area .work-wrap .box-txt{font-size: 12px;}
 .sc-work .work-area .work-item:hover h3{
     opacity: .33;
     transform: translateX(-30px);
