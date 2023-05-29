@@ -26,7 +26,7 @@ body.active{overflow: hidden;}
 
 .inner{padding: 20.4px;}
 .inner1{padding: 0 6vw;}
-/* .inner1{padding: 0 218px;} */
+
 .inner2{padding: 0 109px;}
 
 .btn{
@@ -95,11 +95,8 @@ body.active{overflow: hidden;}
     transform: translateX(-100%);
     height: 100%;
     top: 0;
-    /* background: #1C1D20; */
     width: 6vw;
 
-    /* overflow: hidden; */
-    /* transition: all .85s cubic-bezier(.7, 0, .2, 1); */
 }
 .pan-box .pan{
     height: 150%;
@@ -116,7 +113,6 @@ body.active{overflow: hidden;}
 .cursor{
     position: fixed;
     z-index: 100;
-    /* transform: translate(-50%, -50%); */
     pointer-events: none;
     text-align: center;
     visibility: hidden;
@@ -141,8 +137,6 @@ body.active{overflow: hidden;}
     overflow: hidden;
     display: block;
     transition: width .4s cubic-bezier(0.36, 0, 0.66, 0), height .4s cubic-bezier(0.36, 0, 0.66, 0);
-
-    /* opacity: 0; */
 }
 
 

@@ -18,8 +18,6 @@
     transform: translateY(-50%);
     display: block;
     z-index: 99;
-
-    /* padding-bottom: 15vh; */
 }
 .sc-intro .bookmark .bookmark-txt{
     position: absolute;
@@ -30,8 +28,6 @@
     padding-left: clamp(1.5em, 4vw, 2.5em);
     line-height: 1.2;
     color: #fff;
-
-    /* padding-bottom: 15vh; */
 }
 .sc-intro .bookmark .bookmark-txt span{display: block;}
 .sc-intro .bookmark svg{
@@ -54,8 +50,6 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    /* width: 3em;
-    height: 3em; */
     transform: translate(-50%, -50%);
     border-radius: 50%;
     overflow: hidden;
@@ -152,15 +146,12 @@
     height: 100%;
     box-sizing: border-box;
     position: absolute;
-    /* min-height: 115vh; */
     z-index: 99;
 }
 .sc-intro .intro-img img{
-    /* top: 9%; */
     display: block;
     margin: 0 auto;
     width: auto;
-    /* width: 100%; */
     height: 100%;
     object-fit: cover;
 }
@@ -171,14 +162,11 @@
     position: absolute;
     font-size: clamp(1.55em, 2.3vw, 2.5em);
     color: #fff;
-    /* transform: translate(0, -50%); */
     transform: translateY(-50%);
-    /* top: 50%; */
     top: calc(50% + 3px);
     right: 5%;
     line-height: 1.4;
     padding-right: clamp(2.5em, 13vw, 8em);
-    /* padding-bottom: 15vh; */
 }
 .sc-intro .info-area .arrow-box{
     width: 18px;
@@ -188,10 +176,6 @@
     /* top: -12.5vh; */
     position: absolute;
     top: -10.5vh;
-
-    /* 흰색
-    left: -22px;
-    top: -43%; */
 }
 .sc-intro .info-area .arrow-box svg{
     width: 100%;
@@ -199,8 +183,6 @@
     display: block;
 }
 .sc-intro .info-area .arrow-txt{
-    /* font-size: 1.6rem; */
-    /* font-size: 1.9vw; */
     font-weight: 400;
     font-family: 'Metropolis';
     box-sizing: border-box;
@@ -221,7 +203,6 @@
 
     animation: rolling 45s linear infinite;
     font-family: 'Metropolis';
-    /* font-weight: bold; */
     color: #fff;
     opacity: 0.7;
 }
@@ -248,7 +229,6 @@
 .sc-work .inner1{
     padding-left: 218px;
     padding-right: 218px;
-    /* height: 90vh; */
 }
 .sc-work .work-desc{
     padding: 131px 0 212px;
@@ -256,7 +236,6 @@
 }
 .sc-work .work-desc p{}
 .sc-work .work-desc .work-txt{
-    /* font-size: clamp(1.55em, 2.3vw, 2.5em); */
     font-size: clamp(1.55em, 2vw, 2.5em);
     line-height: 1.45;
     width: 70%;
@@ -270,7 +249,6 @@
     
     
 }
-/* .sc-work .work-desc .work-box b{transform: translateY(50%);opacity: 0;} */
 .sc-work .work-desc .btn-box{
     padding-left: 41px;
     width: 30%;
@@ -290,8 +268,6 @@
     display: block;
     width: clamp(9em, 12vw, 11em);
     height: clamp(9em, 12vw, 11em);
-    /* width: 163px;
-    height: 163px; */
     border-radius: 50%;
     background: #1C1D20;
     border: 0;
@@ -304,7 +280,6 @@
     top: -50%;
     left: -25%;
     display: block;
-    /* transform: translateY(-76%); */
     transform: scale(1,0);
     transition: transform ease-in-out 0.5s;
     transform-origin: top;
@@ -315,9 +290,6 @@
     transform-origin: bottom;
 }
 
-/* transform: scaleX(0);
-transition: transform 1s;
-transform-origin: right; */
 
 .sc-work .work-desc .btn .btn-txt{
     padding: 0 1em;
@@ -340,15 +312,20 @@ transform-origin: right; */
     font-size: .6em;
     line-height: 1.065;
     padding-left: 6vw;
-    /* margin-bottom: 1em; */
+
     text-transform: uppercase;
     letter-spacing: .05em;
     opacity: .5;
 }
 .sc-work .work-area .work-list{}
-.sc-work .work-area .work-item.show{display: none;}
+
+.sc-work .work-area .work-item.show{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
 .sc-work .btn-more.show{display: none;}
-/* .sc-work .work-area .work-item.a.show {display: block;} */
+
 .sc-work .work-area .work-item::before{
     content: '';
     top: 0;
@@ -391,10 +368,7 @@ transform-origin: right; */
 }
 
 /* 제이쿼리 */
-/* .sc-work .work-area .work-item:hover .view-box{
-    width: 100%;
-    width: 375px;
-} */
+
 .sc-work .view{
     width: 75px;
     height: 75px;
@@ -429,7 +403,6 @@ transform-origin: right; */
     padding: 0 6vw;
     font-size: calc(clamp(3.25em, 5.6vw, 8em) * .75);
     width: 70%;
-    /* padding-left: 109px; */
     transition: all .3s cubic-bezier(.7, 0, .3, 1);
 }
 .sc-work .work-area .work-wrap .txt-box{
@@ -610,7 +583,7 @@ transform-origin: right; */
     background: linear-gradient(to bottom,hsla(225, 7%, 12%) 0%, hsla(225, 7%, 12%, 0.987) 8.1%, hsla(225, 7%, 12%, 0.951) 15.5%, hsla(225, 7%, 12%, 0.896) 22.5%, hsla(225, 7%, 12%, 0.825) 29%, hsla(225, 7%, 12%, 0.741) 35.3%, hsla(225, 7%, 12%, 0.648) 41.2%, hsla(225, 7%, 12%, 0.55) 47.1%, hsla(225, 7%, 12%, 0.45) 52.9%, hsla(225, 7%, 12%, 0.352) 58.8%, hsla(225, 7%, 12%, 0.259) 64.7%, hsla(225, 7%, 12%, 0.175) 71%, hsla(225, 7%, 12%, 0.104) 77.5%, hsla(225, 7%, 12%, 0.049) 84.5%, hsla(225, 7%, 12%, 0.013) 91.9%, hsla(225, 7%, 12%, 0) 100%);
     opacity: .75;
 }
-/* .sc-output .pan-box.active{height: 0vh;} */
+
 
 
 /* sc-oneself */
@@ -619,10 +592,7 @@ transform-origin: right; */
     /* background: #4256d2; */
 
     width: 100%;
-    /* height: 100vh; */
     position: relative;
-    /* overflow: hidden; */
-    /* box-shadow: 0px 5px 0px 5px #1C1D20; */
 }
 .sc-oneself .inner1{
     padding: clamp(5em, 21vh, 12em) 218px 0;
@@ -637,8 +607,6 @@ transform-origin: right; */
 }
 .sc-oneself .profile-wrap .profile{
     margin-right: 0.125em;
-    /* width: 71px;
-    height: 71px; */
     height: 0.85em;
     width: 0.85em;
     display: inline-block;
@@ -782,12 +750,10 @@ transform-origin: right; */
         width: 100%;
         padding-top: 31px;
         font-size: calc(clamp(1.75em, 2.3vw, 2.5em) * 1.125);
-        /* padding-bottom: 16px; */
     }
     .sc-work .work-area .work-wrap .txt-box{
         padding-left: 0;
         text-align: left;
-        /* width: 32%; */
         width: 100%;
         word-break: keep-all;
     }
@@ -822,7 +788,7 @@ transform-origin: right; */
     .sc-work .view-wrap{display: none;}
 
 }
-/* @media (hover: none) */
+
 @media screen and (max-width: 767px) {
     /* *320을 보고 잡아야함 */
     .sc-intro{min-height: 110vh;}

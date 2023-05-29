@@ -120,8 +120,11 @@ $(function(){
     $('.sc-work .btn-more').click(function(e){
         e.preventDefault();
         $('.sc-work .btn-more').addClass('show')
-        // $('.work-item').removeClass('show');
-        $('.work-item').slideDown(800);
+        gsap.to('.sc-work .work-area .work-item.show',{
+            opacity:1,
+            visibility: 'visible',
+            height: 'auto'
+        })
 
     })
 
@@ -225,9 +228,9 @@ $(function(){
     gsap.to('.sc-output .output-list.list1',{
 
         scrollTrigger:{
-            trigger:".output-list.list1",
-            start:"top-=20% bottom",
-            end: "50% top",
+            trigger:".sc-output",
+            start:"top+=50% bottom",
+            end: "bottom+=50% top",
             // markers:true,
             scrub:1,
         },
@@ -237,9 +240,9 @@ $(function(){
     gsap.to('.sc-output .output-list.list2',{
 
         scrollTrigger:{
-            trigger:".output-list.list2",
-            start:"top bottom",
-            end: "bottom top",
+            trigger:".sc-output",
+            start:"top+=50% bottom",
+            end: "bottom+=50% top",
             // markers:true,
             scrub:1,
         },
@@ -261,18 +264,4 @@ $(function(){
         height:0
     });
 
-
-    // footer 버튼 움직이기
-    // gsap.to('.sc-oneself .profile-wrap .btn-work',{
-
-    //     scrollTrigger:{
-    //         trigger:".footer",
-    //         start:"top 50%",
-    //         end: "70% 20%",
-    //         markers:true,
-    //         scrub:1,
-    //     },
-
-    //     xPercent:30,
-    // });
 })
