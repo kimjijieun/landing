@@ -73,24 +73,22 @@ $(function(){
 
 
     // 호버시 view생김
-    $('.sc-work .work-area .work-title').mouseover(function(){
-        // 원랜'.sc-work .work-area .work-item'
+    $('.sc-work .work-area .work-left').mouseover(function(){
+
         gsap.to('.cursor .view, .view-wrap',{
-            with:'100%',
             opacity:1,
             visibility: 'visible',
         })
 
-        idx = $(this).index();
+        idx = $(this).parents('.work-area .work-item').index();
 
         gsap.to('.view-wrap .item',{
             yPercent:-100*idx
         })
     })
-    $('.sc-work .work-area .work-title').mouseleave(function(){
+    $('.sc-work .work-area .work-left').mouseleave(function(){
 
         gsap.to('.cursor .view, .view-wrap',{
-            with:0,
             opacity:0,
             visibility: 'hidden',
         })
