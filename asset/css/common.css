@@ -9,13 +9,12 @@
 body{
     font-family: 'Metropolis','NeueMontreal', 'Noto Sans KR', 'Malgun Gothic', 'sans-serif';
     
-    /* 스크롤바없애기 */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
     color: #1C1D20;
 }
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+    display: none;
 }
 .sc-work .work-desc, .txt-box{
     font-family: 'Pretendard-Regular';
@@ -58,7 +57,6 @@ body.active{overflow: hidden;}
 
     top: -50%;
     left: -25%;
-    /* transform: translateY(-76%); */
     transform: scale(1,0);
     transition: transform ease-in-out 0.5s;
     transform-origin: top;
@@ -69,7 +67,6 @@ body.active{overflow: hidden;}
     transform-origin: bottom;
 }
 .btn:hover .btn-txt{
-    /* color: #fff; */
     z-index: 99;
     position: relative;
 }
@@ -77,11 +74,10 @@ body.active{overflow: hidden;}
 
 
 
-/* .col{padding-left: 109px;} */
+
 .title{
     margin-bottom: 1.5em;
     line-height: 1.065;
-    /* margin-bottom: 1em; */
     text-transform: uppercase;
     letter-spacing: .05em;
     opacity: .5;
@@ -115,10 +111,10 @@ body.active{overflow: hidden;}
     z-index: 100;
     pointer-events: none;
     text-align: center;
-    visibility: hidden;
 }
 
 .cursor .view{
+    opacity: 0;
     width: 75px;
     height: 75px;
     color: #fff;

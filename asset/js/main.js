@@ -1,9 +1,7 @@
 $(function(){
 
     history.scrollRestoration = "manual"
-// 시작 로딩페이지
 
-    //글자
     let idx = 0;
     arrHello = ['Hello', 'Bonjour', 'स्वागत हे', 'Ciao', 'Olá', 'おい', 'Hallå', 'Guten tag', '안녕하세요'];
     txtmotion = setInterval(() => {
@@ -14,7 +12,6 @@ $(function(){
     setTimeout(() => {
         clearInterval(txtmotion);
     }, arrHello.length*200);
-    // 맨처음에 실행안된이유는 setInterval 시간이 똑같아서
 
 
     gsap.set('body',{overflow:'hidden'})
@@ -72,12 +69,12 @@ $(function(){
 
 
 
-    // 호버시 view생김
+    // 호버 view
     $('.sc-work .work-area .work-left').mouseover(function(){
 
         gsap.to('.cursor .view, .view-wrap',{
             opacity:1,
-            visibility: 'visible',
+            scale: 1,
         })
 
         idx = $(this).parents('.work-area .work-item').index();
@@ -90,7 +87,7 @@ $(function(){
 
         gsap.to('.cursor .view, .view-wrap',{
             opacity:0,
-            visibility: 'hidden',
+            scale: 0,
         })
     })
     
@@ -139,7 +136,6 @@ $(function(){
             trigger:".sc-intro",
             start:"0% 0%",
             end: "100% 0%",
-            // markers:true, //좌표표시
             scrub:5,
         },
         yPercent:20,
@@ -149,11 +145,9 @@ $(function(){
 
 
 
-// 스크롤 메뉴버튼
-// 스크롤 글씨
+// 스크롤
     $(window).scroll(function(){
         curr = $(this).scrollTop();
-        // introHeight = $('.sc-intro').outerHeight()-50;
         oneselfHeight = $('.sc-oneself').outerHeight();
 
         let rolling = gsap.timeline({})
@@ -171,13 +165,11 @@ $(function(){
         e.preventDefault();
 
         $('.header .btn-menu').toggleClass('active');
-        // $('.header .btn-menu').toggleClass('active, show');
         $('.header .menu-area').toggleClass('active');
         $('.dimmed').toggleClass('active');
         $('body').toggleClass('active');
         $('.link-nav:last-child').toggleClass('show');
         
-        // 모바일, 내릴때 버튼보이기
         if ($(window).scrollTop() == 0) {
             if ($('.header .btn-menu').hasClass('on')) {
                 $('.header .btn-menu').removeClass('on');
@@ -190,7 +182,6 @@ $(function(){
         
         if ($("body").hasClass('active')) {
             $('body').css('overflow','hidden');
-            // $('body').unbind('hover');
         } else {
             $('body').css('overflow','initial');
         }
@@ -209,7 +200,6 @@ $(function(){
             trigger: '.sc-work .work-desc',
             start: '35% bottom',
             end: 'bottom+=15% top',
-            // markers: true,
             toggleActions: 'play reverse play reverse',
         },
     });
@@ -221,7 +211,6 @@ $(function(){
 
 
 
-    // 스크롤시 롤링
     let pan = gsap.timeline({});
 
 
@@ -231,7 +220,6 @@ $(function(){
             trigger:".sc-output",
             start:"top+=50% bottom",
             end: "bottom+=50% top",
-            // markers:true,
             scrub:1,
         },
 
@@ -243,7 +231,6 @@ $(function(){
             trigger:".sc-output",
             start:"top+=50% bottom",
             end: "bottom+=50% top",
-            // markers:true,
             scrub:1,
         },
 
@@ -256,7 +243,6 @@ $(function(){
             trigger:".sc-output .pan-box",
             start:"top bottom",
             end: "bottom top",
-            // markers:true,
             scrub:1,
         },
 
