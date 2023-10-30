@@ -50,22 +50,42 @@ $(function(){
         
     })
 
-    $('.move, .btn-txt, .work-box .arrow').mousemove(function(e){
+    $('.move').mousemove(function(e){
 
         console.log(e.offsetX);
-        var x = ((-$(this).width() / 2) + e.offsetX) *0.2;
-        var y = ((-$(this).height() / 2) + e.offsetY) *0.2;
+        var x = ((-$(this).width() / 2) + e.offsetX) *0.4;
+        var y = ((-$(this).height() / 2) + e.offsetY) *0.4;
     
         gsap.to($(this), {
             transform:"translate(" + x + "px," + y + "px)"
         })
     })
 
-    $('.move, .btn-txt, .work-box .arrow').mouseleave(function(){
+    $('.move').mouseleave(function(){
         gsap.to($(this), {
             transform:"translate(0,0)"
         })
     })
+
+    $('.btn-work, .btn-txt, .work-box .arrow, .sc-work .btn-more').mousemove(function(e){
+
+        // console.log(e.offsetX);
+        var x = ((-$(this).width() / 2) + e.offsetX) * 0.4;
+        var y = ((-$(this).height() / 2) + e.offsetY) * 0.4;
+    
+        gsap.to($(this),0.5, {
+            transform:"translate3D(" + x + "px," + y + "px, 0)",
+            ease: Elastic.easeOut
+        })
+    })
+
+    $('.btn-work, .btn-txt, .work-box .arrow, .sc-work .btn-more').mouseleave(function(){
+        gsap.to($(this),1.2, {
+            transform:"translate3D(0, 0, 0)",
+            ease: Elastic.easeOut.config(1, 0.1)
+        })
+    })
+
 
 
 

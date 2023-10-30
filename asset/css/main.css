@@ -496,7 +496,7 @@
 .sc-work .btn-more .btn-txt{
     padding: 0 2.5em;
     color: rgb(28, 29, 32);
-    transition: all ease-in-out 0.1s;
+    /* transition: all ease-in-out 0.1s; */
 }
 .sc-work .btn-more i{
     display: inline-block;
