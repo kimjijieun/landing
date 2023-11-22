@@ -257,13 +257,14 @@ $(function(){
         xPercent:10
       });
 
-      gsap.to('.sc-output .pan-box, pan',{
+      gsap.to('.sc-output .pan-box, .sc-output .pan',{
 
         scrollTrigger:{
-            trigger:".sc-output .pan-box",
-            start:"top bottom",
-            end: "bottom top",
+            trigger:".footer",
+            start:"top-=15% 50%",
+            end: "80% top",
             scrub:1,
+            // delay:3,
         },
 
         yPercent:-100,
