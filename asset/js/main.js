@@ -257,18 +257,58 @@ $(function(){
         xPercent:10
       });
 
-      gsap.to('.sc-output .pan-box, .sc-output .pan',{
+    //   gsap.to('.sc-output .pan-box, .sc-output .pan',{
 
-        scrollTrigger:{
-            trigger:".footer",
-            start:"top-=15% 50%",
-            end: "80% top",
-            scrub:1,
-            // delay:3,
-        },
+    //     scrollTrigger:{
+    //         trigger:".footer",
+    //         start:"top-=15% 50%",
+    //         end: "80% top",
+    //         scrub:1,
+    //         // delay:3,
+    //     },
 
-        yPercent:-100,
-        height:0
-    });
+    //     yPercent:-100,
+    //     height:0
+    // });
 
+    function init() {
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.matchMedia({
+            "(min-width: 768px)": function () {
+
+                gsap.to('.sc-output .pan-box, .sc-output .pan',{
+                    scrollTrigger:{
+                        trigger:".footer",
+                        start:"top 50%",
+                        end: "80% top",
+                        scrub:1,
+                    },
+            
+                    yPercent:-100,
+                    height:0
+                });
+                // ScrollTrigger.refresh()
+            },
+            "(max-width: 767px)": function () {
+
+                gsap.to('.sc-output .pan-box, .sc-output .pan',{
+                    scrollTrigger:{
+                        trigger:".footer",
+                        start:"top 50%",
+                        end: "80% top",
+                        scrub:1,
+                    },
+            
+                    yPercent:-100,
+                    height:0
+                });
+                // ScrollTrigger.refresh()
+            }
+        });
+        window.addEventListener("resize", ScrollTrigger.update);
+    }
+
+    init();
 })
