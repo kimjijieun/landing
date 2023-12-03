@@ -73,14 +73,14 @@ $(function(){
         var x = ((-$(this).width() / 2) + e.offsetX) * 0.4;
         var y = ((-$(this).height() / 2) + e.offsetY) * 0.4;
     
-        gsap.to($(this),0.5, {
+        gsap.to($(this),1.5, {
             transform:"translate3D(" + x + "px," + y + "px, 0)",
             ease: Elastic.easeOut
         })
     })
 
     $('.btn-work, .btn-txt, .work-box .arrow, .sc-work .btn-more').mouseleave(function(){
-        gsap.to($(this),1.2, {
+        gsap.to($(this),1.5, {
             transform:"translate3D(0, 0, 0)",
             ease: Elastic.easeOut.config(1, 0.1)
         })
@@ -134,16 +134,20 @@ $(function(){
 
 
     // more버튼 클릭시 나타나기
-    $('.sc-work .btn-more').click(function(e){
-        e.preventDefault();
-        $('.sc-work .btn-more').addClass('show')
-        gsap.to('.sc-work .work-area .work-item.show',{
-            opacity:1,
-            visibility: 'visible',
-            height: 'auto'
-        })
+    $(".sc-work .btn-more").click(function (e) {
 
-    })
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 400);
+
+        e.preventDefault();
+        $(".sc-work .btn-more").addClass("show");
+        gsap.to(".sc-work .work-area .work-item.show", {
+            opacity: 1,
+            visibility: "visible",
+            height: "auto",
+        });
+    });
 
 
 
@@ -170,7 +174,6 @@ $(function(){
         curr = $(this).scrollTop();
         oneselfHeight = $('.sc-oneself').outerHeight();
 
-        let rolling = gsap.timeline({})
 
 
         if (curr > 100) {
@@ -227,49 +230,20 @@ $(function(){
 
 
 
-
-
-
-
-    let pan = gsap.timeline({});
-
-
-    gsap.to('.sc-output .output-list.list1',{
-
+    marqeeTl = gsap.timeline({
         scrollTrigger:{
-            trigger:".sc-output",
-            start:"top+=50% bottom",
-            end: "bottom+=50% top",
-            scrub:1,
-        },
-
-        xPercent:-10
+          trigger:".sc-output",
+          start:"0% 70%",
+          end:"100% 0%",
+          scrub:1,
+        }
       });
-    gsap.to('.sc-output .output-list.list2',{
+    
+      marqeeTl
+      .addLabel('s')
+      .to('.sc-output .output-list.list1',{xPercent:-10},'s')
+      .to('.sc-output .output-list.list2',{xPercent:10},'s')
 
-        scrollTrigger:{
-            trigger:".sc-output",
-            start:"top+=50% bottom",
-            end: "bottom+=50% top",
-            scrub:1,
-        },
-
-        xPercent:10
-      });
-
-    //   gsap.to('.sc-output .pan-box, .sc-output .pan',{
-
-    //     scrollTrigger:{
-    //         trigger:".footer",
-    //         start:"top-=15% 50%",
-    //         end: "80% top",
-    //         scrub:1,
-    //         // delay:3,
-    //     },
-
-    //     yPercent:-100,
-    //     height:0
-    // });
 
     function init() {
 
@@ -278,37 +252,116 @@ $(function(){
         ScrollTrigger.matchMedia({
             "(min-width: 768px)": function () {
 
-                gsap.to('.sc-output .pan-box, .sc-output .pan',{
+                let panTl = gsap.timeline({
                     scrollTrigger:{
                         trigger:".footer",
-                        start:"top 50%",
-                        end: "80% top",
+                        start:"top 70%",
+                        end: "60% 70%",
                         scrub:1,
                     },
-            
-                    yPercent:-100,
-                    height:0
-                });
-                // ScrollTrigger.refresh()
+                  });
+
+                panTl
+                .addLabel('s')
+                .to('.sc-output .pan-box',{
+                    yPercent:-20,
+                    height:0,
+                },'s')
+                let panel = document.querySelector(".footer");
+                let tl = gsap.timeline({
+                    scrollTrigger:{
+                        trigger: panel,
+                        start:"top 70%",
+                        end: "70% 70%",
+                        scrub:1,
+                    },
+                  });
+                
+                  tl
+                  .set('.sc-oneself',{
+                    yPercent: -30,
+                })
+                .to('.sc-oneself',{
+                    yPercent: 0,
+                    ease: "none",
+                    duration: 1,
+                })
+
             },
             "(max-width: 767px)": function () {
-
-                gsap.to('.sc-output .pan-box, .sc-output .pan',{
+                let panTl = gsap.timeline({
                     scrollTrigger:{
                         trigger:".footer",
-                        start:"top 50%",
-                        end: "80% top",
+                        start:"top 70%",
+                        end: "60% 70%",
                         scrub:1,
                     },
-            
-                    yPercent:-100,
+                  });
+
+                panTl
+                .addLabel('s')
+                .to('.sc-output .pan-box',{
+                    yPercent:-20,
                     height:0
-                });
-                // ScrollTrigger.refresh()
+                },'s')
+
+
+                let panel = document.querySelector(".footer");
+                let tl = gsap.timeline({
+                    scrollTrigger:{
+                        trigger: panel,
+                        start:"top 70%",
+                        end: "50% 70%",
+                        scrub:1,
+                    },
+                  });
+                
+                tl
+                .set('.sc-oneself',{
+                    yPercent: -30,
+                })
+                .to('.sc-oneself',{
+                    yPercent: 0,
+                    ease: "none",
+                    duration: 1,
+                })
             }
         });
         window.addEventListener("resize", ScrollTrigger.update);
     }
 
     init();
+
+
+    var previousWidth = $(window).width();
+    var previousHeight = $(window).height();
+
+    // 창 크기 변화 감지 이벤트
+    $(window).resize(function () {
+        
+        var currentWidth = $(window).width();
+        var currentHeight = $(window).height();
+
+        if (currentWidth !== previousWidth || currentHeight !== previousHeight) {
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 400);
+
+            previousWidth = currentWidth;
+            previousHeight = currentHeight;
+        }
+    });
+
+
+
+    
+    const lenis = new Lenis()
+
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time)=>{
+    lenis.raf(time * 700)
+    })
+
+    gsap.ticker.lagSmoothing(0)
 })

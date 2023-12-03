@@ -527,6 +527,8 @@
     transform: translateX(-5%);
     z-index: 9;
     background: #fff;
+    flex-direction: row-reverse;
+    padding-bottom: 16vh;
 }
 .sc-output .output-list .output-item{
     width: 25%;
@@ -577,32 +579,36 @@
 .sc-output .output-list.list2 .video-wrap.two{background: #908d8f;}
 
 
+.sc-output .pan-wrap{
+    width: 100%;
+    position: relative;
+    height: 0;
+    z-index: 3;
+}
 .sc-output .pan-box{
     width: 100%;
-    top: auto;
     bottom: 0;
     position: relative;
     height: 10vh;
-
-    z-index: 3;
     transform: translateX(0);
 }
 .sc-output .pan-box .pan{
+    display: block;
     width: 150%;
     position: absolute;
     background: #fff;
     height: 750%;
     left: 50%;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -85%);
     z-index: 1;
 
     box-shadow: 0px 18px 32px 12px #1c1d20;
 }
-.sc-output .pan-box .pan-dark{
+.pan-dark{
     position: absolute;
     display: block;
-    bottom: 0;
+    top: 0;
     width: 100%;
     height: calc(clamp(5em, 21vh, 12em) * .75);
     background: linear-gradient(to bottom,hsla(225, 7%, 12%) 0%, hsla(225, 7%, 12%, 0.987) 8.1%, hsla(225, 7%, 12%, 0.951) 15.5%, hsla(225, 7%, 12%, 0.896) 22.5%, hsla(225, 7%, 12%, 0.825) 29%, hsla(225, 7%, 12%, 0.741) 35.3%, hsla(225, 7%, 12%, 0.648) 41.2%, hsla(225, 7%, 12%, 0.55) 47.1%, hsla(225, 7%, 12%, 0.45) 52.9%, hsla(225, 7%, 12%, 0.352) 58.8%, hsla(225, 7%, 12%, 0.259) 64.7%, hsla(225, 7%, 12%, 0.175) 71%, hsla(225, 7%, 12%, 0.104) 77.5%, hsla(225, 7%, 12%, 0.049) 84.5%, hsla(225, 7%, 12%, 0.013) 91.9%, hsla(225, 7%, 12%, 0) 100%);
@@ -931,7 +937,7 @@
     }
     .sc-work .work-desc br{display: none;}
     .sc-work .btn-work{right: 0;top: 41%;}
-    .sc-work .work-area{margin-top: 107px;}
+    .sc-work .work-area{padding: 12vh 6vw 6vh;}
     .sc-work .work-area .title{
         padding-bottom: 5px;
         padding-left: 0;
